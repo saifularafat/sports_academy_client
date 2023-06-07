@@ -3,10 +3,12 @@ const Avatar = () => {
     return (
         <div>
             <img 
+            className='rounded-full'
+            title='saiful'
             src={img} 
             alt="profile"
-            width={50}
-            height={50} />
+            width={60}
+            height={60} />
         </div>
     );
 };
