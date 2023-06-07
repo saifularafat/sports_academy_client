@@ -13,39 +13,39 @@ const Footer = () => {
                 <div className="fontStyle">
                     <Link>
                         <ImFacebook className="w-6 h-6 mx-auto" />
-                        <p className="">Facebook <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">Facebook <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
                 <div className="fontStyle">
                     <Link>
                         <BsInstagram className="w-6 h-6 mx-auto" />
-                        <p className="">Instagram <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">Instagram <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
                 <div className="fontStyle">
                     <Link>
                         <BsTwitter className="w-6 h-6 mx-auto" />
-                        <p className="">Twitter <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">Twitter <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
                 <div className="fontStyle">
                     <Link><BsYoutube className="w-6 h-6 mx-auto" />
-                        <p className="">YouTub <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">YouTub <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
                 <div className="fontStyle">
                     <Link><FaLinkedinIn className="w-6 h-6 mx-auto" />
-                        <p className="">Linkedin <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">Linkedin <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
                 <div className="fontStyle">
                     <Link><BsTiktok className="w-6 h-6 mx-auto" />
-                        <p className="">Tiktok <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">Tiktok <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
                 <div className="fontStyle">
                     <Link><FaTelegramPlane className="w-6 h-6 mx-auto" />
-                        <p className="">Telegram <br /> <span className="text-xs">@skacademy</span></p>
+                        <p className="">Telegram <br /> <span className=" text-xs md:text-base">@skacademy</span></p>
                     </Link>
                 </div>
 

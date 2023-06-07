@@ -11,6 +11,10 @@ export default {
       },
       colors: {
         'main_color': '#173931',
+        'color-btn': '#FF3811',
+        'title-color': '#151515',
+        'description-color': '#737373',
+        'second-title': '#444444',
       },
       backgroundImage: {
         'imageName': "url",

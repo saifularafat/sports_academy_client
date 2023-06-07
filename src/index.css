@@ -12,7 +12,9 @@
 
 
 
+
+
 /* Footer style */
 .fontStyle{
-    @apply py-3 md:px-4 px-1 bg-main_color text-white rounded-md text-center
+    @apply py-3 md:px-4 px-1 bg-main_color text-white rounded-md text-center hover:opacity-80 transition duration-200 hover:animate-bounce
 }

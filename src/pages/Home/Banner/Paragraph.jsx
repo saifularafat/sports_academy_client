@@ -14,9 +14,9 @@ const Paragraph = ({ one, two, three, four, coachName, label, adders, colors }) 
             <div className="md:flex items-center justify-center">
                 <p className='coachName' style={{ lineHeight: '20px' }}>{coachName}<br /> <span className="text-lg font-normal">(Head Coach)</span></p>
                 <Link to={adders}
-                    className="border-2 hidden md:block border-green-800 text-xl font-mono font-medium rounded-xl py-2 px-5 relative md:inline-flex items-center justify-start overflow-hidden transition-all group">
+                    className="border-2 hidden md:block border-green-800 hover:border-color-btn text-xl font-mono font-medium rounded-xl py-2 px-5 relative md:inline-flex items-center justify-start overflow-hidden transition-all group">
 
-                    <span className="w-0 h-0 rounded bg-red-700 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
+                    <span className="w-0 h-0 rounded bg-color-btn absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
                     <span className="w-full text-white transition-colors duration-300 ease-in-out group-hover:text-white z-10">
                         {label}
                     </span>
