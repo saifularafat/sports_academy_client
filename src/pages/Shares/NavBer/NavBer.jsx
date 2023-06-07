@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Container from "../../../component/Container";
 import Logo from "./Logo";
-import MenuDropDown from "./MenuDropDown";
+import DashboardMenu from "./DashboardMenu";
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { useState } from "react";
 import Nav from "./Nav";
@@ -18,7 +18,7 @@ const NavBer = () => {
                         <Logo />
                         <Nav />
                         <div>
-                            <MenuDropDown />
+                            <DashboardMenu />
                         </div>
 
                     {/* Mobile Menu */}
@@ -33,9 +33,9 @@ const NavBer = () => {
                                 <div className='absolute top-0 left-0 w-full z-10'>
                                     <div className='flex justify-between items-center px-2 py-2 bg-main_color shadow-lg'>
                                         {/* logo and close ber section */}
-                                        <div>
+                                        <div className="">
                                             <Link to='/'>
-                                                <MenuDropDown />
+                                                <DashboardMenu />
                                             </Link>
                                         </div>
                                         <div>

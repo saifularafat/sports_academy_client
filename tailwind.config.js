@@ -20,6 +20,13 @@ export default {
         'imageName': "url",
       }
     },
+    darkMode: 'class',
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      "light",
+      "dark",
+    ],
+  },
 }

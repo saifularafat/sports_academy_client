@@ -15,7 +15,14 @@ const Nav = () => {
                     <NavLink to='/about'
                         className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
                     >
-                        about
+                        Instructor
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to='/about'
+                        className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
+                    >
+                        Class
                     </NavLink>
                 </li>
                 <li>

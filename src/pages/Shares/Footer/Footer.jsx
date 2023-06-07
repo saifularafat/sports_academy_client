@@ -51,9 +51,9 @@ const Footer = () => {
 
             </div>
             <footer className="footer mx-auto">
-                <div className="">
+                <div className="mx-auto">
                     <img src={logo} alt="" width={70} height={70} />
-                    <p className="text-2xl" style={{lineHeight:'24px'}}>SK Academe Ltd.<br /><span className="text-base" >The sports club has been producing <br /> good players since 2013.</span></p>
+                    <p className="text-2xl" style={{ lineHeight: '24px' }}>SK Academe Ltd.<br /><span className="text-base" >The sports club has been producing <br /> good players since 2013.</span></p>
                 </div>
                 <div className="mx-auto">
                     <span className="footer-title">Services</span>
@@ -62,14 +62,14 @@ const Footer = () => {
                     <a className="link link-hover">Marketing</a>
                     <a className="link link-hover">Advertisement</a>
                 </div>
-                 <div className="mx-auto">
+                <div className="mx-auto">
                     <span className="footer-title">Company</span>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     <a className="link link-hover">Jobs</a>
                     <a className="link link-hover">Press kit</a>
                 </div>
-                 <div className="mx-auto">
+                <div className="mx-auto">
                     <span className="footer-title">Legal</span>
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>
