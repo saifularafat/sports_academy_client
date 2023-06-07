@@ -12,7 +12,7 @@ const NavBer = () => {
 
 
     return (
-        <div className="bg-main_color py-2">
+        <div className="bg-opacity-80 bg-main_color py-2 w-full fixed shadow-lg top-0 z-10">
             <Container>
                 <div className="flex flex-row items-center justify-between">
                         <Logo />

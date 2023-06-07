@@ -14,7 +14,7 @@ const Logo = () => {
                 <h2 className='text-white text-4xl pl-2 leading-4 tracking-wider'>
                     <span className=' font-mono font-extrabold text-sky-500'> S<span className='text-red-600'>K</span></span>
                     <br />
-                    <span className='text-xl tracking-wider'>Academe</span>
+                    <span className='text-xl tracking-wider'>Academy</span>
                 </h2>
             </div>
         </Link>

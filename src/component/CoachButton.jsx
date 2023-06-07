@@ -1,5 +1,5 @@
 
-const Slider = () => {
+const CoachButton = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default CoachButton;

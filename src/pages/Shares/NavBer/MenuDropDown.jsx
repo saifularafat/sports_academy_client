@@ -20,7 +20,7 @@ const MenuDropDown = () => {
             {/* dashboard Menu */}
             {
                 isOpen && (
-                    <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[12vw] bg-white overflow-hidden md:right-0 left-0 md:top-20 top-16 md:text-lg text-lg'>
+                    <div className='absolute rounded-b-xl shadow-md w-[40vw] md:w-[12vw] bg-white overflow-hidden md:right-0 left-0 md:top-[73px] top-16 md:text-lg text-lg'>
                         <div className='flex flex-col cursor-pointer'>
                             
                             {/* {user ? ( */}

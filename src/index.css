@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Banner section */
+.banner{
+    @apply text-6xl font-semibold md:w-96 hidden md:block
+}
+.coachName{
+    @apply text-2xl text-main_color font-mono font-semibold tracking-wide pr-4 text-center pb-4 md:pb-0
+}
+
+
+
+/* Footer style */
+.fontStyle{
+    @apply py-3 md:px-4 px-1 bg-main_color text-white rounded-md text-center
+}
