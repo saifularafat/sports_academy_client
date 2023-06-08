@@ -1,9 +1,10 @@
-// import { useAllCoach } from "../../../api/useCoach";
+import { useAllCoach } from "../../../api/useCoach";
 import Container from "../../../component/Container";
 import SectionTitle from "../../../component/sectionTitle";
+import Coach from "./Coach";
 
 const PopularCoach = () => {
-    // const [ coach ] = useAllCoach();
+    const [coach] = useAllCoach();
     return (
         <div>
             <SectionTitle
@@ -12,12 +13,13 @@ const PopularCoach = () => {
                 subTitle='Ultimately, our goal is to provide a comprehensive and unparalleled sports content experience that transcends the boundaries of traditional mediaUltimately, our goal is to comprehensive and unparalleled sports content experience that transcends the boundaries of traditional media'
             />
             <Container>
-                <div className="grid md:grid-cols-3  grid-cols-1 gap-5">
-                    {/* {
-                        coach.map(person => <p
-                        key={person._id}
-                        >{parent.length}</p>)
-                    } */}
+                <div className="grid md:grid-cols-3 grid-cols-1 gap-x-3 gap-y-8 mb-20">
+                    {
+                        coach.map(persons => <Coach
+                            key={persons._id}
+                            person={persons}
+                        ></Coach>)
+                    }
                 </div>
             </Container>
         </div>
