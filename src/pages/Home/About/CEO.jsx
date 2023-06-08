@@ -4,7 +4,11 @@ const CEO = () => {
     return (
         <div className="bg-main_color p-8 mt-12">
             <Container>
-                <div className="md:flex flex-row items-center justify-between gap-14">
+                <div 
+                data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000"
+                    className="md:flex flex-row items-center justify-between gap-14">
                     <div className='mb-6'>
                         <img src={ceo} alt="ceo" className='md:h-96 md:w-[1240px]' />
                     </div>

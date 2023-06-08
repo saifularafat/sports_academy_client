@@ -5,11 +5,11 @@ import Sports from "./Sports";
 
 const About = () => {
     return (
-        <div className="mb-20 mt-10">
+        <div className="md:mb-20 mb-4 mt-10">
             <SectionTitle
                 name='About'
                 title='Academy Immersion'
-                subTitle='World class academy coaches and player development team'
+                subTitle='World class academy coaches and player development team of traditional media'
             />
             <Sports />
             <CEO />
