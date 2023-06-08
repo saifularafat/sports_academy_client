@@ -1,11 +1,11 @@
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../../component/useAuth";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const SocialSignIn = () => {
     const navigate = useNavigate();
-    const location = useLoaderData();
+    const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     const { setLoading, googleSignIn, githubSignIn } = useAuth();

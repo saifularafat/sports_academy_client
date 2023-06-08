@@ -1,16 +1,16 @@
 import { useForm } from "react-hook-form";
 import { AiOutlineEye } from "react-icons/ai";
 import SocialSignIn from "../Shares/SocialSignIn/SocialSignIn";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { handleShowConfirmPass, handleShowPass } from "../../api/ShowPassword";
 import useAuth from "../../component/useAuth";
 import Swal from "sweetalert2";
-import { RiseLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners"; 
 
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const location = useLoaderData();
+    const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     const {
@@ -264,9 +264,10 @@ const SignUp = () => {
                                 className='bg-main_color w-full text-xl font-semibold font-mono uppercase tracking-wider rounded-md py-3 text-white hover:bg-transparent hover:text-main_color border-2 hover:border-main_color border-main_color transition duration-200'
                             >
                                 {
-                                    loading ? <RiseLoader className="mx-auto 
-                                    animate-spin"
-                                        size={24} />
+                                    loading ? <PulseLoader className="mx-auto 
+                                    animate-pulse"
+                                    color="#FF3811"
+                                    size={18} />
                                         :
                                         'Sign Up'
                                 }

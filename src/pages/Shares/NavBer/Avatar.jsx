@@ -1,15 +1,15 @@
 import img from '../../../assets/sport-logo.png'
+import useAuth from '../../../component/useAuth';
 const Avatar = () => {
+    const { user } = useAuth();
     return (
-        <div>
-            <img 
-            className='rounded-full'
-            title='saiful'
-            src={img} 
-            alt="profile"
-            width={60}
-            height={60} />
-        </div>
+        <img src={user && user?.photoURL ?
+            user?.photoURL : img}
+            className="rounded-full"
+            referrerPolicy="no-referrer"
+            alt="Profile photo"
+            width='50'
+            height='50' />
     );
 };
 
