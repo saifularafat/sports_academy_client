@@ -21,6 +21,12 @@
     bg-gray-200 text-gray-800
 }
 
+/* About section */
+.sports_div{
+    @apply hover:shadow-2xl p-2 border-2 border-main_color
+     rounded-lg hover:animate-pulse
+}
+
 
 /* Social component */
 .social_style{
