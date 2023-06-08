@@ -17,7 +17,7 @@ export default {
         'second-title': '#444444',
       },
       backgroundImage: {
-        'imageName': "url",
+        'signUpImage': "url('./src/assets/dot_circle.png')",
       }
     },
     darkMode: 'class',
