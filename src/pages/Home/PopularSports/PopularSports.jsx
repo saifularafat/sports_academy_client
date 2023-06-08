@@ -1,7 +1,8 @@
+// import { useAllCoach } from "../../../api/useCoach";
 import SectionTitle from "../../../component/sectionTitle";
 
 const PopularSports = () => {
-    
+    // const {coach, refetch} = useAllCoach();
     return (
         <div>
             <SectionTitle 
