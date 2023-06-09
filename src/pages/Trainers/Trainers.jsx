@@ -1,8 +1,9 @@
 
+import Container from '../../component/Container';
 import banner from './../../assets/slider/bg.png'
 const Trainers = () => {
     return (
-        <div >
+        <div className=''>
             <div style={{
                 backgroundImage: `url(${banner})`,
                 backgroundRepeat: "no-repeat",
@@ -10,8 +11,10 @@ const Trainers = () => {
                 height: '80vh',
                 width: "100"
             }} className='bg-white'>
-                <h2 className='page_banner-title text-white md:pt-32 pt-24'>Home/Contact</h2>
             </div>
+            <Container>
+                <h2 className='py-12'></h2>
+            </Container>
         </div>
     );
 };

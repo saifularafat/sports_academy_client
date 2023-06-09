@@ -35,7 +35,7 @@ const MenuDropDown = () => {
                     </div>
                 </div>
 
-                {/* dashboard Menu */}
+                {/* dashboard NavBER and menu */}
                 {
                     isOpen && (
                         <div className='absolute rounded-b-xl shadow-md w-[40vw] md:w-[12vw] bg-white overflow-hidden md:right-0 left-0 md:top-[67px] top-16 md:text-lg text-lg'>

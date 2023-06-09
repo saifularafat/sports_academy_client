@@ -43,6 +43,19 @@
     @apply flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer
 }
 
+/* Dashboard style */
+.dash_btn{
+    @apply flex w-full text-lg items-center px-5 py-2 mt-3 text-main_color hover:bg-slate-400 
+    transition-colors duration-300 transform
+}
+.dark_btn{
+    @apply flex w-full text-lg items-center px-5 py-1 text-main_color hover:bg-slate-400 
+    transition duration-300 transform
+}
+
+
+
+
 /* terms And Condition */
 .terms_btn {
     @apply py-3 px-6 text-2xl font-serif font-semibold border rounded-xl bg-gradient-to-r from-green-800 to-color-btn text-white hover:border-main_color hover:text-white transition duration-200

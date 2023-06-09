@@ -9,6 +9,7 @@ import Trainers from "../pages/Trainers/Trainers";
 import Sports from "../pages/Home/Sports/Sports";
 import Blog from "../pages/Blog/Blog";
 import Contact from "../pages/Contact/Contact";
+import Dashboard from "../layouts/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -21,23 +22,24 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path:'trainers',
-        element:<Trainers />
+        path: 'trainers',
+        element: <Trainers />
       },
       {
-        path:'sports',
-        element:<Sports />
+        path: 'sports',
+        element: <Sports />
       },
       {
-        path:'blog',
-        element:<Blog />
+        path: 'blog',
+        element: <Blog />
       },
       {
-        path:'contact',
-        element:<Contact />
+        path: 'contact',
+        element: <Contact />
       },
     ]
   },
+  // login and SignUP from router
   {
     path: 'login',
     element: <Login />
@@ -49,7 +51,12 @@ const router = createBrowserRouter([
   {
     path: 'terms',
     element: <Terms />
-  }
+  },
+  // dashboard router
+  {
+    path: '/dashboard',
+    element: <Dashboard />
+  },
 
 ]);
 
