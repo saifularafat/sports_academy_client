@@ -8,9 +8,9 @@ const PopularCoach = () => {
     return (
         <div>
             <SectionTitle
-                name='Coach'
-                title='Popular Coach'
-                subTitle='Ultimately, our goal is to provide a comprehensive and unparalleled sports content experience that transcends the boundaries of traditional mediaUltimately, our goal is to comprehensive and unparalleled sports content experience that transcends the boundaries of traditional media'
+                name='Trainers'
+                title='Popular Trainers'
+                subTitle='Ultimately, our goal is to provide a comprehensive and unparalleled sports content experience that transcends the boundaries of traditional sports content experience that transcends the boundaries of traditional media'
             />
             <Container>
                 <div className="grid md:grid-cols-3 grid-cols-1 gap-x-3 gap-y-8 mb-20">

@@ -3,38 +3,38 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
     return (
         <nav>
-            <ul className="md:flex items-center gap-x-10 text-white hidden">
+            <ul className="md:flex items-center gap-x-4 text-white hidden">
                 <li>
                     <NavLink to='/'
-                        className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
                         Home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/about'
-                        className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
+                    <NavLink to='/trainers'
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
-                        Instructor
+                        TRAINERS
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/about'
-                        className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
+                    <NavLink to='/sports'
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
-                        Class
+                        Sports
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/'
-                        className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
+                    <NavLink to='/blog'
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
                         Blog
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/about'
-                        className={({ isActive }) => (isActive ? 'text-red-600 border-b-2 border-red-600' : 'text-white')}
+                    <NavLink to='/contact'
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
                         Contact
                     </NavLink>

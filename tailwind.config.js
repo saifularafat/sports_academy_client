@@ -18,6 +18,7 @@ export default {
       },
       backgroundImage: {
         'signUpImage': "url('./src/assets/dot_circle.png')",
+        'trainerBanner': "url('./src/assets/slider/trainer-banner.jpg')",
       }
     },
     darkMode: 'class',

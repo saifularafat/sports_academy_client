@@ -2,45 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* NavBer style */
+.active {
+    @apply  py-2 px-4 text-lg font-sans font-semibold text-yellow-400 uppercase border-b-2  border-yellow-600
+    rounded-lg tracking-wide transition duration-200
+}
+.default {
+    @apply  py-2 px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide
+}
+
 /* Banner section */
-.banner{
+.banner {
     @apply text-6xl font-semibold md:w-96 hidden md:block
 }
-.coachName{
+
+.coachName {
     @apply text-2xl text-main_color font-mono font-semibold tracking-wide pr-4 text-center pb-4 md:pb-0
 }
 
 
 
 /* SignUp style */
-.form_label{
+.form_label {
     @apply text-title-color mb-2 text-lg font-medium
 }
-.input_style{
-    @apply w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-main_color 
-    bg-gray-200 text-gray-800
+
+.input_style {
+    @apply w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-main_color bg-gray-200 text-gray-800
 }
 
 /* About section */
-.sports_div{
-    @apply hover:shadow-2xl p-2 border-2 border-main_color
-     rounded-lg hover:animate-pulse
+.sports_div {
+    @apply hover:shadow-2xl p-2 border-2 border-main_color rounded-lg hover:animate-pulse
 }
 
 
 /* Social component */
-.social_style{
-    @apply flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 hover:bg-green-950
-    rounded-md transition duration-200 hover:text-white text-base cursor-pointer
+.social_style {
+    @apply flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer
 }
 
 /* terms And Condition */
-.terms_btn{
-    @apply py-3 px-6 text-2xl font-serif font-semibold border
-    rounded-xl bg-gradient-to-r from-green-800 to-color-btn  text-white hover:border-main_color hover:text-white transition duration-200
+.terms_btn {
+    @apply py-3 px-6 text-2xl font-serif font-semibold border rounded-xl bg-gradient-to-r from-green-800 to-color-btn text-white hover:border-main_color hover:text-white transition duration-200
 }
 
 /* Footer style */
-.fontStyle{
+.fontStyle {
     @apply py-3 md:px-4 px-1 bg-main_color text-white rounded-md text-center hover:opacity-80 transition duration-200 hover:animate-bounce
+}
+
+/* Error style */
+.error_btn{
+    @apply text-lg text-main_color font-semibold uppercase py-2 px-6 border-2 border-main_color rounded-md hover:bg-main_color
+     hover:text-white transition duration-300 hover:shadow-inner hover:shadow-green-400
 }

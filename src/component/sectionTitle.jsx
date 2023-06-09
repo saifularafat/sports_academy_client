@@ -17,7 +17,7 @@ const SectionTitle = ({ name, title, subTitle }) => {
                     data-aos-duration="1500"
                     className="flex flex-col items-center">
                     <div className="text-center border-b-2 border-color-btn pb-4">
-                        <h3 className="text-3xl font-medium text-main_color">{title}</h3>
+                        <h3 className="text-3xl font-medium text-main_color pb-1 uppercase">{title}</h3>
                         <p className="text-base font-normal text-green-700 md:w-[620px] md:mx-auto">{subTitle}</p>
                     </div>
                 </div>
