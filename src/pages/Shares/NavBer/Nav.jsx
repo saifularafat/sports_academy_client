@@ -38,7 +38,7 @@ const Nav = () => {
                     <NavLink to='/sports'
                         className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
-                        Sports
+                        Classes
                     </NavLink>
                 </li>
                 <li>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const IsUser = () => {
     return (
-        <ul className="md:mt-12 mt-6 md:pb-20">
+        <ul className="md:mt-6 mt-4 md:pb-3">
             <li>
                 <Link
                     to='/dashboard/mySelected'
@@ -22,16 +22,6 @@ const IsUser = () => {
                     <SiKhanacademy className='w-5 h-5' />
                     <span className='mx-4 font-medium'> My Admission</span>
                 </Link>
-            </li>
-            <li>
-                <Link
-                    to='/dashboard/addSports'
-                    className='dash_btn'
-                >
-                    <SiKhanacademy className='w-5 h-5' />
-                    <span className='mx-4 font-medium'> Add Sports</span>
-                </Link>
-
             </li>
         </ul>
     );

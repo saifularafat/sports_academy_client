@@ -46,8 +46,9 @@ const MySelected = () => {
                                 Football
                             </td>
                             <td>$ 123 </td>
-                            <td>
+                            <td className="flex items-center gap-2">
                                 <button>delete</button>
+                                <button>Payment</button>
                             </td>
                         </tr>
                         <tr>

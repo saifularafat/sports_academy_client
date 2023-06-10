@@ -25,7 +25,11 @@ const AddSports = () => {
             <div className="flex items-center justify-center ">
                 <form
                     onSubmit={handleSubmit(handleAddSubmit)}
-                    className="space-y-2">
+                    className="space-y-2"
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                >
                     <div>
                         <label
                             htmlFor='name'
@@ -97,7 +101,7 @@ const AddSports = () => {
                                 data-temp-mail-org='0'
                                 {...register("price", { required: true })}
                             />
-                             {errors.price?.type === "required" && (
+                            {errors.price?.type === "required" && (
                                 <p className="text-red-600">Please price</p>
                             )}
                         </div>

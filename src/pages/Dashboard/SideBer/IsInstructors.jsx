@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const IsInstructors = () => {
     return (
-        <ul className="md:mt-12 mt-6 md:pb-20">
+        <ul className="md:mt-12 mt-6 md:pb-16">
             <li>
                 <Link
-                    to='/dashboard/mySelected'
+                    to='/dashboard/instructorsAllClass'
                     className='dash_btn'
                 >
                     <BsFillBookmarkPlusFill className='w-5 h-5' />
@@ -16,7 +16,7 @@ const IsInstructors = () => {
             </li>
             <li>
                 <Link
-                    to='/dashboard/myAdmission'
+                    to='/dashboard/addSports'
                     className='dash_btn'
                 >
                     <SiKhanacademy className='w-5 h-5' />

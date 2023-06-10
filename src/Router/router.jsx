@@ -14,6 +14,10 @@ import MySelected from "../pages/Dashboard/AllUsers/MySelected/MySelected";
 import MyAdmission from "../pages/Dashboard/AllUsers/MyAdmission/MyAdmission";
 import Payment from "../pages/Dashboard/AllUsers/Payment/Payment";
 import AddSports from "../pages/Dashboard/Instructors/AddSports";
+import InstructorsAllClass from "../pages/Dashboard/Instructors/InstructorsAllClass";
+import ManageAllUser from "../pages/Dashboard/Admin/ManageAllUser";
+import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -59,7 +63,7 @@ const router = createBrowserRouter([
   // dashboard router
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <PrivateRouter><Dashboard /></PrivateRouter>,
     children: [
       // users rout
       {
@@ -76,9 +80,22 @@ const router = createBrowserRouter([
       },
       // Instructors rout
       {
-        path:'/dashboard/addSports',
-        element:<AddSports />
-      }
+        path: '/dashboard/addSports',
+        element: <AddSports />
+      },
+      {
+        path: '/dashboard/instructorsAllClass',
+        element: <InstructorsAllClass />
+      },
+      // Admin route
+      {
+        path: '/dashboard/manageAllUsers',
+        element: <ManageAllUser />
+      },
+      {
+        path: '/dashboard/manageClasses',
+        element: <ManageClasses />
+      },
     ]
   },
 
