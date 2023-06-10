@@ -1,10 +1,12 @@
 import { MdDashboardCustomize } from "react-icons/md";
+import { } from "react-icons/bi";
 import { GrLogout } from "react-icons/gr";
 import useAuth from "../../../component/useAuth";
 import Swal from "sweetalert2";
 import { Link, NavLink } from "react-router-dom";
 import { FcSettings } from "react-icons/fc";
 import DarkLight from "../../Shares/NavBer/DarkLight";
+import IsUser from "./IsUser";
 const SideBer = () => {
     const { user, logOut } = useAuth();
     console.log(user);
@@ -21,16 +23,14 @@ const SideBer = () => {
             })
     }
     return (
-        <div className="bg-slate-300 md:w-56 ">
-            <div className="">
-                <div className="md:mt-3 p-[10px] bg-green-200">
-                    <h2 className=" text-slate-800 flex items-center gap-3 md:pl-3">
-                        <Link to='/'>
-                            <MdDashboardCustomize className="w-5 h-5" />
-                        </Link>
-                        <span className="md:text-2xl text-xl font-medium"> Dashboard</span>
-                    </h2>
-                </div>
+        <div className="bg-slate-300 md:w-64 hidden md:block">
+            <div className="md:mt-3 p-[10px] bg-green-200">
+                <h2 className=" text-slate-800 flex items-center gap-3 md:pl-3">
+                    <Link to='/'>
+                        <MdDashboardCustomize className="w-5 h-5" />
+                    </Link>
+                    <span className="md:text-2xl text-xl font-medium"> Dashboard</span>
+                </h2>
             </div>
             <div className="md:hidden block pt-5 pb-2 bg-orange-300">
                 <div className="text-center">
@@ -42,32 +42,13 @@ const SideBer = () => {
                 </div>
             </div>
 
-            {/* dashboard */}
-            <div className="md:mt-12 mt-6 md:pb-20">
-                <NavLink
-                    to='/'
-                    className='dash_btn'
-                >
-                    <GrLogout className='w-5 h-5' />
-                    <span className='mx-4 font-medium'>All Select</span>
-                </NavLink>
-                <NavLink
-                    to='/'
-                    className='dash_btn'
-                >
-                    <GrLogout className='w-5 h-5' />
-                    <span className='mx-4 font-medium'>Admission</span>
-                </NavLink>
-                <NavLink
-                    to='/'
-                    className='dash_btn'
-                >
-                    <GrLogout className='w-5 h-5' />
-                    <span className='mx-4 font-medium'>Payment</span>
-                </NavLink>
-            </div>
-
-            {/* Dashboard Bottom section */}
+           {/* {
+            user?.role === 'IsAdmin' ? 'IsAdmin' : <IsUser />
+           } */}
+           {/* {
+            user?.role === 'Instructors ' ? 'IsInstructors ' : <IsUser />
+           } */}
+           <IsUser />
             <div className="mt-6">
                 <div className="border-t-2 border-main_color pt-5">
                     <button className="dark_btn">
@@ -90,12 +71,15 @@ const SideBer = () => {
                         className='dash_btn'
                     >
                         <GrLogout className='w-5 h-5' />
-
                         <span className='mx-4 font-medium'>Logout</span>
                     </button>
                 </div>
             </div>
-        </div>
+            <div className="md:hidden block">
+
+            </div>
+        </div >
+       
     );
 };
 

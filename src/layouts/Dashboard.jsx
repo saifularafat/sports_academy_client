@@ -5,13 +5,13 @@ import InfoSideBer from "../pages/Dashboard/InfoSideBer/InfoSideBer";
 const Dashboard = () => {
     return (
         <div className="md:flex min-h-screen relative">
-            <SideBer />
+            <InfoSideBer />
             <div className=" flex-1 md:ml-32">
                 <div className="p-6">
                     <Outlet />
                 </div>
             </div>
-            <InfoSideBer />
+            <SideBer />
         </div>
     );
 };

@@ -45,7 +45,7 @@
 
 /* Dashboard style */
 .dash_btn{
-    @apply flex w-full text-lg items-center px-5 py-2 mt-3 text-main_color hover:bg-slate-400 
+    @apply flex w-full text-lg items-center px-5 py-2 mt-4 text-main_color hover:bg-slate-400 
     transition-colors duration-300 transform
 }
 .dark_btn{
