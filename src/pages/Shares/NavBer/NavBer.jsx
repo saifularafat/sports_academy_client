@@ -1,25 +1,24 @@
 import { Link } from "react-router-dom";
 import Container from "../../../component/Container";
 import Logo from "./Logo";
-import DashboardMenu from "./DashboardMenu";
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { useState } from "react";
 import Nav from "./Nav";
+import Profile from "./Profile";
+import useAuth from "../../../component/useAuth";
 
 const NavBer = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-
+    const { user } = useAuth();
 
     return (
         <div className="bg-opacity-80 bg-main_color py-2 w-full fixed shadow-lg top-0 z-10">
             <Container>
                 <div className="flex flex-row items-center justify-between">
-                        <Logo />
-                        <Nav />
-                        <div>
-                            <DashboardMenu />
-                        </div>
+
+                    <Logo />
+                    <Nav />
 
                     {/* Mobile Menu */}
                     <div className='md:hidden px-2'>
@@ -34,9 +33,7 @@ const NavBer = () => {
                                     <div className='flex justify-between items-center px-2 py-2 bg-main_color shadow-lg'>
                                         {/* logo and close ber section */}
                                         <div className="">
-                                            <Link to='/'>
-                                                <DashboardMenu />
-                                            </Link>
+                                            <Profile />
                                         </div>
                                         <div>
                                             <button
@@ -63,8 +60,14 @@ const NavBer = () => {
                                             </li>
                                             <li className='p-2
                                             hover:bg-orange-400'>
-                                                <Link to='allToys' className='default hover:text-white'>
-                                                    All Toys
+                                                <Link to='/trainers' className='default hover:text-white'>
+                                                    Trainers
+                                                </Link>
+                                            </li>
+                                            <li className='p-2
+                                            hover:bg-orange-400'>
+                                                <Link to='/sports' className='default hover:text-white'>
+                                                    Sports
                                                 </Link>
                                             </li>
 
@@ -74,6 +77,29 @@ const NavBer = () => {
                                                     Blog
                                                 </Link>
                                             </li>
+                                            <li className='p-2
+                                            hover:bg-orange-400'>
+                                                <Link to='/dashboard'
+                                                className='default hover:text-white'>
+                                                    Dashboard
+                                                </Link>
+                                            </li>
+                                            {
+                                                user ?
+                                                    <li className='p-2
+                                            hover:bg-orange-400'>
+                                                        <Link to='' className='default hover:text-white'>
+                                                            LogOut
+                                                        </Link>
+                                                    </li>
+                                                    :
+                                                    <li className='p-2
+                                            hover:bg-orange-400'>
+                                                        <Link to='login' className='default hover:text-white'>
+                                                            Login
+                                                        </Link>
+                                                    </li>
+                                            }
                                         </ul>
                                     </nav>
 

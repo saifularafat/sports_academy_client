@@ -1,5 +1,4 @@
 import { MdDashboardCustomize } from "react-icons/md";
-import { } from "react-icons/bi";
 import { GrLogout } from "react-icons/gr";
 import useAuth from "../../../component/useAuth";
 import Swal from "sweetalert2";
@@ -7,8 +6,15 @@ import { Link, NavLink } from "react-router-dom";
 import { FcSettings } from "react-icons/fc";
 import DarkLight from "../../Shares/NavBer/DarkLight";
 import IsUser from "./IsUser";
+import { useState } from "react";
+import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import Profile from "../../Shares/NavBer/Profile";
+
+
 const SideBer = () => {
     const { user, logOut } = useAuth();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     console.log(user);
     const handleLogOut = () => {
         logOut()
@@ -23,6 +29,7 @@ const SideBer = () => {
             })
     }
     return (
+
         <div className="bg-slate-300 md:w-64 hidden md:block">
             <div className="md:mt-3 p-[10px] bg-green-200">
                 <h2 className=" text-slate-800 flex items-center gap-3 md:pl-3">
@@ -42,13 +49,13 @@ const SideBer = () => {
                 </div>
             </div>
 
-           {/* {
+            {/* {
             user?.role === 'IsAdmin' ? 'IsAdmin' : <IsUser />
            } */}
-           {/* {
+            {/* {
             user?.role === 'Instructors ' ? 'IsInstructors ' : <IsUser />
            } */}
-           <IsUser />
+            <IsUser />
             <div className="mt-6">
                 <div className="border-t-2 border-main_color pt-5">
                     <button className="dark_btn">
@@ -75,11 +82,14 @@ const SideBer = () => {
                     </button>
                 </div>
             </div>
-            <div className="md:hidden block">
-
+            <div className="md:hidden block ">
+                <div className=" flex items-center justify-center">
+                    <Profile />
+                    <h2>Ber</h2>
+                </div>
             </div>
         </div >
-       
+
     );
 };
 

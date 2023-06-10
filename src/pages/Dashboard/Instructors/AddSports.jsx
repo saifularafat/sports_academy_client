@@ -22,7 +22,7 @@ const AddSports = () => {
                 subTitle='Your sports class added now !'
             />
             {/* TODO Title Name  */}
-            <div className="">
+            <div className="flex items-center justify-center ">
                 <form
                     onSubmit={handleSubmit(handleAddSubmit)}
                     className="space-y-2">

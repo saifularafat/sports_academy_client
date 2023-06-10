@@ -1,6 +1,22 @@
 import { NavLink } from "react-router-dom";
+import Profile from "./Profile";
+import useAuth from "../../../component/useAuth";
+import Swal from "sweetalert2";
 
 const Nav = () => {
+    const { user, logOut } = useAuth();
+    const handlerLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your logOut success.!',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            })
+    }
     return (
         <nav>
             <ul className="md:flex items-center gap-x-4 text-white hidden">
@@ -32,13 +48,35 @@ const Nav = () => {
                         Blog
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to='/contact'
+                <li className="">
+                    <NavLink to='/dashboard'
                         className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
-                        Contact
+                        Dashboard
                     </NavLink>
                 </li>
+                {
+                    user ?
+                        <span className="flex items-center gap-x-4 ml-12 ">
+                            <button
+                                className='bg-white text-main_color py-[6px] px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide hover:opacity-70'
+                                onClick={handlerLogOut}>
+                                Log Out
+                            </button>
+                            <span className=' '>
+                                    <Profile />
+                            </span>
+                        </span>
+                        :
+                        <div className='flex items-center gap-x-4'>
+                            <NavLink
+                                to='login'
+                                className='bg-white text-main_color py-[6px] px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide hover:opacity-70'>
+                                Login
+                            </NavLink>
+                                <Profile />
+                        </div>
+                }
             </ul>
         </nav>
     );

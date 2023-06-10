@@ -9,8 +9,8 @@ const Avatar = () => {
             className="rounded-full"
             referrerPolicy="no-referrer"
             alt="Profile photo"
-            width='40'
-            height='40' />
+            width='45'
+            height='45' />
     );
 };
 
