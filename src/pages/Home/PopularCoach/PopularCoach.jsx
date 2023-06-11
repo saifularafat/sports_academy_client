@@ -1,10 +1,10 @@
-import { useAllCoach } from "../../../api/useCoach";
+import { useAllInstructors } from "../../../api/useCoach";
 import Container from "../../../component/Container";
 import SectionTitle from "../../../component/sectionTitle";
 import Coach from "./Coach";
 
 const PopularCoach = () => {
-    const [coach] = useAllCoach();
+    const [instructors] = useAllInstructors();
     return (
         <div>
             <SectionTitle
@@ -15,7 +15,7 @@ const PopularCoach = () => {
             <Container>
                 <div className="grid md:grid-cols-3 grid-cols-1 gap-x-3 gap-y-8 mb-20">
                     {
-                        coach.map(persons => <Coach
+                        instructors.map(persons => <Coach
                             key={persons._id}
                             person={persons}
                         ></Coach>)

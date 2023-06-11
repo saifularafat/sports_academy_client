@@ -15,7 +15,7 @@ const Dashboard = () => {
         <div className="max-w-7xl">
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content md:ml-10 ml-0 md:pt-12 pt-5">
+                <div className="drawer-content md:ml-6 ml-0 md:pt-12 pt-5">
                     <label htmlFor="my-drawer-2" className="bg-main_color py-2 w-full text-right text-white text-2xl font-medium drawer-button lg:hidden">+=</label>
                     {/* Page content here */}
                     <Outlet />
@@ -33,7 +33,7 @@ const Dashboard = () => {
                             user?.role === 'Instructors ' ? 'IsInstructors ' : <IsUser />
                         } */}
                         {
-                            isAdmin ? <IsAdmin /> : <IsUser />
+                            isAdmin ? <IsInstructors /> : <IsUser />
                         }
                         {/* <IsUser /> */}
                         <DashboardSideFooter />

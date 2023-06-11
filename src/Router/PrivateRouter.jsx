@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../component/useAuth";
+import Loading from "../component/Loading";
 
 const PrivateRouter = ({ children }) => {
     const location = useLocation();
@@ -9,7 +10,7 @@ const PrivateRouter = ({ children }) => {
     } = useAuth();
 
     if (loading) {
-        return <p>Loading.....</p>
+        return <Loading />
     }
     if (user) {
         return children

@@ -2,6 +2,7 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../../component/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SocialSignIn = () => {
     const navigate = useNavigate();
@@ -12,48 +13,67 @@ const SocialSignIn = () => {
 
     const handlerGoogleLogin = () => {
         googleSignIn()
-        .then(result => {
-            console.log(result);
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Your SignUp Successful',
-                showConfirmButton: false,
-                timer: 1500
+            .then(result => {
+                const loggedUser = result.user;
+
+                axios.post(`${import.meta.env.VITE_API_URL}/users`, {
+                    name: loggedUser.displayName,
+                    email: loggedUser.email,
+                    image: loggedUser.photoURL,
+                    role: loggedUser.role,
+                })
+                    .then(() => {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Your SignUp Successful',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        navigate(from, { replace: true });
+                    })
+                    .catch((err) => {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'error',
+                            title: `${err.message}`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setLoading(false)
+                    })
             })
-            navigate(from, { replace: true })
-        })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: `${error.message}`,
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error.message}`,
+                })
+                setLoading(false)
             })
-            setLoading(false)
-        })
     }
 
     const handlerGitHubLogin = () => {
         githubSignIn()
-        .then(result => {
-            console.log(result);
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Your SignUp Successful',
-                showConfirmButton: false,
-                timer: 1500
+            .then(result => {
+                console.log(result);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your SignUp Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate(from, { replace: true })
             })
-            navigate(from, { replace: true })
-        })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: `${error.message}`,
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error.message}`,
+                })
+                setLoading(false)
             })
-            setLoading(false)
-        })
     }
 
     return (

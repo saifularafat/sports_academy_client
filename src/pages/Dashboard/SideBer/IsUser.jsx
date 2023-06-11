@@ -20,7 +20,7 @@ const IsUser = () => {
                     className='dash_btn'
                 >
                     <SiKhanacademy className='w-5 h-5' />
-                    <span className='mx-4 font-medium'> My Admission</span>
+                    <span className='mx-4 font-medium'> My Enroll</span>
                 </Link>
             </li>
         </ul>

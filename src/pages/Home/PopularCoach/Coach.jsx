@@ -1,7 +1,7 @@
 import Button from "../../../component/Button";
 
 const Coach = ({ person }) => {
-    console.log(person);
+    // console.log(person);
     return (
         <div className=" hover:shadow-xl rounded-lg transition duration-200">
             <div

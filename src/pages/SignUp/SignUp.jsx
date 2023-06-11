@@ -1,17 +1,18 @@
 import { useForm } from "react-hook-form";
 import { AiOutlineEye } from "react-icons/ai";
 import SocialSignIn from "../Shares/SocialSignIn/SocialSignIn";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { handleShowConfirmPass, handleShowPass } from "../../api/ShowPassword";
 import useAuth from "../../component/useAuth";
 import Swal from "sweetalert2";
-import { PulseLoader } from "react-spinners"; 
+import { PulseLoader } from "react-spinners";
+import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+
 
     const {
         loading,
@@ -28,7 +29,6 @@ const SignUp = () => {
     } = useForm();
 
     const password = watch("password", "");
-    /* Form submit handler */
     const FormSubmit = (data) => {
         console.log(data);
 
@@ -44,20 +44,41 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(imageData => {
-                const imageAdders = imageData.data.display_url;
+                console.log(imageData);
+                const imageAdders = imageData.data.url;
                 createUser(data.email, data.password)
                     .then(result => {
                         console.log(result);
                         updateUserProfile(data.name, imageAdders)
                             .then(() => {
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'Your SignUp Successful',
-                                    showConfirmButton: false,
-                                    timer: 1500
+                                axios.post(`${import.meta.env.VITE_API_URL}/users`, {
+                                    name: data.name,
+                                    email: data.email,
+                                    image: imageAdders,
+                                    role: data.role,
                                 })
-                                navigate(from, { replace: true })
+                                    .then(data => {
+                                        if (data.insertedId) {
+                                            Swal.fire({
+                                                position: 'top-center',
+                                                icon: 'success',
+                                                title: 'Your SignUp Successful',
+                                                showConfirmButton: false,
+                                                timer: 1500
+                                            })
+                                        }
+                                        navigate('/')
+                                    })
+                                    .catch((err) => {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'error',
+                                            title: `${err.message}`,
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        })
+                                        setLoading(false)
+                                    })
                             })
                     })
                     .catch(error => {
@@ -80,223 +101,225 @@ const SignUp = () => {
     }
 
     return (
-        <div className="hero bg-slate-400 bg-signUpImage min-h-screen">
-            <div className='flex justify-center items-center min-h-screen  pt-5'>
-                <div className='flex flex-col max-w-md p-6  sm:p-10 shadow-2xl rounded-t-[120px]'>
-                    <div className='mb-8 text-center border-b-2 border-rose-900'>
-                        <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
-                        <p className='text-base text-second-title mb-4'>Welcome to Sports kings Academy</p>
-                    </div>
-                    <form
-                        onSubmit={handleSubmit(FormSubmit)}
-                        noValidate=''
-                        action=''
-                        className='space-y-6 ng-untouched ng-pristine ng-valid'
-                    >
-                        <div className='space-y-4'>
+        <>
+            <Helmet><title>SK Academy | SignUp</title></Helmet>
+            <div className="hero bg-slate-400 bg-signUpImage min-h-screen">
+                <div className='flex justify-center items-center min-h-screen  pt-5'>
+                    <div className='flex flex-col max-w-md p-6  sm:p-10 shadow-2xl rounded-t-[120px]'>
+                        <div className='mb-8 text-center border-b-2 border-rose-900'>
+                            <h1 className='my-3 text-4xl text-black font-bold'>Sign Up</h1>
+                            <p className='text-base text-second-title mb-4'>Welcome to Sports kings Academy</p>
+                        </div>
+                        <form
+                            onSubmit={handleSubmit(FormSubmit)}
+                            noValidate=''
+                            action=''
+                            className='space-y-6 ng-untouched ng-pristine ng-valid'
+                        >
+                            <div className='space-y-4'>
+                                <div>
+                                    <label
+                                        htmlFor='name'
+                                        className='form_label'>
+                                        Name*
+                                    </label>
+                                    <input
+                                        type='text'
+                                        name='name'
+                                        id='name'
+                                        placeholder='Enter Your Name'
+                                        className='input_style'
+                                        data-temp-mail-org='0'
+                                        {...register("name", { required: true })}
+                                    />
+                                    {errors.name?.type === "required" && (
+                                        <p className="text-red-600">Email is required</p>
+                                    )}
+                                </div>
+
+                            </div>
                             <div>
-                                <label
-                                    htmlFor='name'
-                                    className='form_label'>
-                                    Name*
+                                <label htmlFor='email' className='form_label'>
+                                    Email address*
                                 </label>
                                 <input
-                                    type='text'
-                                    name='name'
-                                    id='name'
-                                    placeholder='Enter Your Name'
+                                    type='email'
+                                    name='email'
+                                    id='email'
+                                    required
+                                    placeholder='Enter Your Email Here'
                                     className='input_style'
                                     data-temp-mail-org='0'
-                                    {...register("name", { required: true })}
+                                    {...register("email", { required: true })}
                                 />
-                                {errors.name?.type === "required" && (
+                                {errors.email?.type === "required" && (
                                     <p className="text-red-600">Email is required</p>
                                 )}
                             </div>
+                            <div>
+                                <div className='flex justify-between'>
+                                    <label htmlFor='password' className='form_label'>
+                                        Password*
+                                    </label>
+                                </div>
+                                <div className="relative">
+                                    <input
+                                        type='password'
+                                        name='password'
+                                        id='password'
+                                        required
+                                        placeholder='*******'
+                                        className='input_style'
+                                        {...register("password",
+                                            {
+                                                required: true,
+                                                minLength: 6,
+                                                maxLength: 20,
+                                                pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z]).{6}/
+                                            })}
+                                    />
+                                    {errors.password?.type === 'required' &&
+                                        <p className="text-red-600 mt-1">Password is required</p>
+                                    }
+                                    {errors.password?.type === 'minLength' &&
+                                        <p className="text-red-600 mt-1">Password must be 6 character</p>
+                                    }
+                                    {errors.password?.type === 'maxLength' &&
+                                        <p className="text-red-600 mt-1">Password must be 20 character</p>
+                                    }
+                                    {errors.password?.type === 'pattern' &&
+                                        <p className="text-red-600 mt-1">Password must have one Uppercase
+                                            two lowercase one number and special character</p>
+                                    }
+                                    <AiOutlineEye
+                                        onClick={handleShowPass}
+                                        className="absolute top-3 right-3 cursor-pointer text-lg"
+                                    ></AiOutlineEye>
+                                </div>
 
-                        </div>
-                        <div>
-                            <label htmlFor='email' className='form_label'>
-                                Email address*
-                            </label>
-                            <input
-                                type='email'
-                                name='email'
-                                id='email'
-                                required
-                                placeholder='Enter Your Email Here'
-                                className='input_style'
-                                data-temp-mail-org='0'
-                                {...register("email", { required: true })}
-                            />
-                            {errors.email?.type === "required" && (
-                                <p className="text-red-600">Email is required</p>
-                            )}
-                        </div>
-                        <div>
-                            <div className='flex justify-between'>
-                                <label htmlFor='password' className='form_label'>
-                                    Password*
-                                </label>
                             </div>
-                            <div className="relative">
-                                <input
-                                    type='password'
-                                    name='password'
-                                    id='password'
-                                    required
-                                    placeholder='*******'
-                                    className='input_style'
-                                    {...register("password",
-                                        {
-                                            required: true,
-                                            minLength: 6,
-                                            maxLength: 20,
-                                            pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z]).{6}/
+                            <div>
+                                <div className='flex justify-between'>
+                                    <label htmlFor='password' className='form_label'>
+                                        Confirm*
+                                    </label>
+                                </div>
+                                <div className="relative">
+                                    <input
+                                        type="password"
+                                        name="confirm"
+                                        {...register("confirm", { required: true })}
+                                        {...register("confirm", {
+                                            validate: (value) =>
+                                                value === password || "Password do not match",
                                         })}
-                                />
-                                {errors.password?.type === 'required' &&
-                                    <p className="text-red-600 mt-1">Password is required</p>
-                                }
-                                {errors.password?.type === 'minLength' &&
-                                    <p className="text-red-600 mt-1">Password must be 6 character</p>
-                                }
-                                {errors.password?.type === 'maxLength' &&
-                                    <p className="text-red-600 mt-1">Password must be 20 character</p>
-                                }
-                                {errors.password?.type === 'pattern' &&
-                                    <p className="text-red-600 mt-1">Password must have one Uppercase
-                                        two lowercase one number and special character</p>
-                                }
-                                <AiOutlineEye
-                                    onClick={handleShowPass}
-                                    className="absolute top-3 right-3 cursor-pointer text-lg"
-                                ></AiOutlineEye>
+                                        id="confirm"
+                                        placeholder="confirm password"
+                                        className="input_style"
+                                    />
+                                    {errors.confirm?.type === "required" && (
+                                        <p className="text-rose-500">Confirm Password is required</p>
+                                    )}
+                                    {errors.confirm?.type === "validate" && (
+                                        <p className="text-rose-500 mt-1">{errors.confirm.message}</p>
+                                    )}
+                                    <AiOutlineEye
+                                        onClick={handleShowConfirmPass}
+                                        className="absolute top-3 right-3 cursor-pointer text-lg"
+                                    ></AiOutlineEye>
+                                </div>
                             </div>
-
-                        </div>
-                        <div>
-                            <div className='flex justify-between'>
-                                <label htmlFor='password' className='form_label'>
-                                    Confirm*
-                                </label>
-                            </div>
-                            <div className="relative">
-                                <input
-                                    type="password"
-                                    name="confirm"
-                                    {...register("confirm", { required: true })}
-                                    {...register("confirm", {
-                                        validate: (value) =>
-                                            value === password || "Password do not match",
-                                    })}
-                                    id="confirm"
-                                    placeholder="confirm password"
-                                    className="input_style"
-                                />
-                                {errors.confirm?.type === "required" && (
-                                    <p className="text-rose-500">Confirm Password is required</p>
-                                )}
-                                {errors.confirm?.type === "validate" && (
-                                    <p className="text-rose-500 mt-1">{errors.confirm.message}</p>
-                                )}
-                                <AiOutlineEye
-                                    onClick={handleShowConfirmPass}
-                                    className="absolute top-3 right-3 cursor-pointer text-lg"
-                                ></AiOutlineEye>
-                            </div>
-                        </div>
-                        <div>
-                            <div className='flex justify-between'>
-                                <label htmlFor='password' className='form_label'>
-                                    Phone
-                                </label>
-                            </div>
-                            <input
-                                type='text'
-                                name='phone'
-                                id='phone'
-                                placeholder='+000 00 0000 000 0 '
-                                className='input_style'
-                                {...register("phone", { required: true })}
-                            />
-                        </div>
-                        <div className="flex items-center justify-between">
                             <div>
-                                <label htmlFor='image' className='block mb-2 text-base'>
-                                    Select Image:*
-                                </label>
+                                <div className='flex justify-between'>
+                                    <label htmlFor='password' className='form_label'>
+                                        Phone
+                                    </label>
+                                </div>
                                 <input
+                                    type='text'
+                                    name='phone'
+                                    id='phone'
+                                    placeholder='+000 00 0000 000 0 '
+                                    className='input_style'
+                                />
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <label htmlFor='image' className='block mb-2 text-base'>
+                                        Select Image:*
+                                    </label>
+                                    <input
+                                        required
+                                        type='file'
+                                        id='image'
+                                        name='image'
+                                        accept='image/*'
+                                        {...register("image", { required: true })}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor='image' className='block mb-2 text-base'>
+                                        Gender:*
+                                    </label>
+                                    <select {...register("gender")} className="px-2 focus:outline-main_color rounded-md">
+                                        <option value="male">male</option>
+                                        <option value="female">female</option>
+                                        <option value="other">other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label className=" inline-flex mt-2">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    {...register("checkbox")}
                                     required
-                                    type='file'
-                                    id='image'
-                                    name='image'
-                                    accept='image/*'
-                                    {...register("image", { required: true })}
-                                />
-                            </div>
+                                    className="checkbox" />
+                                <p className='md:pl-3 pl-1 md:text-xl font-open'>Accept
+                                    <Link to='/terms' className='text-blue-600 underline md:pl-2'>Terms and Condition
+                                    </Link>
+                                </p>
+                            </label>
                             <div>
-                                <label htmlFor='image' className='block mb-2 text-base'>
-                                    Gender:*
-                                </label>
-                                <select {...register("gender")} className="px-2 focus:outline-main_color rounded-md">
-                                    <option value="male">male</option>
-                                    <option value="female">female</option>
-                                    <option value="other">other</option>
-                                </select>
-                            </div>
-                        </div>
-                        <label className=" inline-flex mt-2">
-                            <input
-                                type="checkbox"
-                                name="checkbox"
-                                {...register("checkbox")}
-                                required
-                                className="checkbox" />
-                            <p className='md:pl-3 pl-1 md:text-xl font-open'>Accept
-                                <Link to='/terms' className='text-blue-600 underline md:pl-2'>Terms and Condition
-                                </Link>
-                            </p>
-                        </label>
-                        <div>
-                            <button
-                                type='submit'
-                                className='bg-main_color w-full text-xl font-semibold font-mono uppercase tracking-wider rounded-md py-3 text-white hover:bg-transparent hover:text-main_color border-2 hover:border-main_color border-main_color transition duration-200'
-                            >
-                                {
-                                    loading ? <PulseLoader className="mx-auto 
+                                <button
+                                    type='submit'
+                                    className='bg-main_color w-full text-xl font-semibold font-mono uppercase tracking-wider rounded-md py-3 text-white hover:bg-transparent hover:text-main_color border-2 hover:border-main_color border-main_color transition duration-200'
+                                >
+                                    {
+                                        loading ? <PulseLoader className="mx-auto 
                                     animate-pulse"
-                                    color="#FF3811"
-                                    size={18} />
-                                        :
-                                        'Sign Up'
-                                }
+                                            color="#FF3811"
+                                            size={18} />
+                                            :
+                                            'Sign Up'
+                                    }
 
-                            </button>
+                                </button>
+                            </div>
+                        </form>
+                        <div className='flex items-center pt-4 space-x-1'>
+                            <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
+                            <p className='px-3 text-lg dark:text-main_color'>
+                                Sign up with social accounts
+                            </p>
+                            <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                         </div>
-                    </form>
-                    <div className='flex items-center pt-4 space-x-1'>
-                        <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
-                        <p className='px-3 text-lg dark:text-main_color'>
-                            Sign up with social accounts
-                        </p>
-                        <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
-                    </div>
-                    {/* social Component */}
-                    <SocialSignIn />
+                        {/* social Component */}
+                        <SocialSignIn />
 
-                    <p className='px-6 text-lg text-center text-title-color'>
-                        Already have an account?{' '}
-                        <Link
-                            to='/login'
-                            className='hover:underline hover:text-color-btn text-teal-900 font-medium'
-                        >
-                            Login
-                        </Link>
-                    </p>
+                        <p className='px-6 text-lg text-center text-title-color'>
+                            Already have an account?{' '}
+                            <Link
+                                to='/login'
+                                className='hover:underline hover:text-color-btn text-teal-900 font-medium'
+                            >
+                                Login
+                            </Link>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
