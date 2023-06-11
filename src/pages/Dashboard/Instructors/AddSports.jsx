@@ -2,20 +2,61 @@ import { useForm } from "react-hook-form";
 import DashSectionTitle from "../../../component/DashboardSectionTitle";
 import useAuth from "../../../component/useAuth";
 import { PulseLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
+import { useAxiosSecure } from "../../../api/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const AddSports = () => {
     const { user, loading } = useAuth();
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
+
+    const [axiosSecure] = useAxiosSecure();
+
+    const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
+
+
     const handleAddSubmit = (data) => {
-        console.log(data);
+        const imageUrl = data.image[0];
+        const formData = new FormData();
+        formData.append('image', imageUrl)
+        fetch(hosting_image_url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                const imgURL = imageData.data.display_url;
+                const { instructorEmail, instructorName, name, price, seat } = data;
+                const createItem = { instructorEmail, instructorName, name, seat, price: parseFloat(price), image: imgURL }
+                // console.log(createItem);
+                axiosSecure.post('/classes', createItem)
+                    .then(data => {
+                        console.log(data.data);
+                        if (data.data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: 'New sport item added successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
+            })
+
     }
 
     return (
         <div>
+            <Helmet>
+                <title>SK Academy || Add a Sports</title>
+            </Helmet>
             <DashSectionTitle
                 name='Add Sports'
                 title='Add A Sports'
@@ -155,7 +196,7 @@ const AddSports = () => {
                                     color="#FF3811"
                                     size={18} />
                                     :
-                                    'Sign Up'
+                                    'Add Class'
                             }
 
                         </button>

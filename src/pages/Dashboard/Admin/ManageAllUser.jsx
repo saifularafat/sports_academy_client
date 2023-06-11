@@ -1,17 +1,20 @@
 // import { useQuery } from "@tanstack/react-query";
 import DashSectionTitle from "../../../component/DashboardSectionTitle";
-import { Helmet } from "react-helmet-async";
-import { allUsers } from "../../../api/useUsers";
+import { Helmet } from "react-helmet-async"; 
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { useAxiosSecure } from "../../../api/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 const ManageAllUser = () => {
     const [isButtonDisabled, setButtonDisabled] = useState(false);
 
-    const [users, refetch] = allUsers();
-    // console.log(users);
+    const [axiosSecure] = useAxiosSecure();
+    const { data: users = [], refetch } = useQuery(['users'], async () => {
+        const res = await axiosSecure.get('/users')
+        return res.data;
+    })
     const handlerMakeAdmin = user => {
-        console.log('saiful', user._id);
         Swal.fire({
             title: 'Are you sure?',
             text: "Your web site New Admin selected",

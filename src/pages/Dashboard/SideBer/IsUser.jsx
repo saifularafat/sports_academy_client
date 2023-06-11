@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const IsUser = () => {
     return (
-        <ul className="md:mt-6 mt-4 md:pb-3">
+        <ul className="md:mt-7 mt-4 md:pb-20">
             <li>
                 <Link
                     to='/dashboard/mySelected'
@@ -14,7 +14,7 @@ const IsUser = () => {
                     <span className='mx-4 font-medium'>My Selected</span>
                 </Link>
             </li>
-            <li>
+            <li className="">
                 <Link
                     to='/dashboard/myAdmission'
                     className='dash_btn'

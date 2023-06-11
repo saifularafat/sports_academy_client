@@ -4,10 +4,7 @@ import Loading from "../component/Loading";
 
 const PrivateRouter = ({ children }) => {
     const location = useLocation();
-    const {
-        user,
-        loading,
-    } = useAuth();
+    const { user, loading } = useAuth();
 
     if (loading) {
         return <Loading />

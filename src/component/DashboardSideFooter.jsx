@@ -5,9 +5,8 @@ import { FcSettings } from "react-icons/fc";
 import { GrLogout } from "react-icons/gr";
 
 const DashboardSideFooter = () => {
-    const { user, logOut } = useAuth();
+    const { logOut } = useAuth();
 
-    console.log(user);
     const handleLogOut = () => {
         logOut()
             .then(() => {

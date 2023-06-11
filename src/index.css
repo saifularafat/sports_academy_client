@@ -40,7 +40,7 @@
 
 /* Social component */
 .social_style {
-    @apply flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer
+    @apply flex justify-center items-center space-x-2 border m-3 p-2 border-green-900 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer
 }
 
 /* Dashboard style */

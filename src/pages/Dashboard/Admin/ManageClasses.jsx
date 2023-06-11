@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import DashSectionTitle from "../../../component/DashboardSectionTitle";
 
 const ManageClasses = () => {
     return (
         <div>
+            <Helmet>
+                <title>SK Academy || Manage Classes</title>
+            </Helmet>
             <DashSectionTitle
                 name='Classes'
                 title='Manage Classes'

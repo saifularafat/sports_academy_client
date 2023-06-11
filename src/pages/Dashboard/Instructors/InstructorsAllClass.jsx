@@ -1,11 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import DashSectionTitle from "../../../component/DashboardSectionTitle";
 
 const InstructorsAllClass = () => {
     return (
         <div>
+            <Helmet><title>SK Academy || All Classes</title></Helmet>
             <DashSectionTitle
                 name='Classes'
-                title='My All sports'
+                title='My All Classes'
                 subTitle='Your interested and health sporting game !'
             />
             <div className="overflow-x-auto">

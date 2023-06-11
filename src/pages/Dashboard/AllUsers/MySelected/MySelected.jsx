@@ -1,8 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import DashSectionTitle from "../../../../component/DashboardSectionTitle";
 
 const MySelected = () => {
     return (
         <div>
+            <Helmet><title>Sk Academy | My selected</title></Helmet>
             <DashSectionTitle
                 name='Selector'
                 title='My Selector'
