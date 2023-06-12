@@ -32,11 +32,18 @@ const AddSports = () => {
             .then(imageData => {
                 const imgURL = imageData.data.display_url;
                 const { instructorEmail, instructorName, name, price, seat } = data;
-                const createItem = { instructorEmail, instructorName, name, seat, price: parseFloat(price), image: imgURL }
-                // console.log(createItem);
+                console.log(data);
+                const createItem = { 
+                    instructorEmail, 
+                    instructorName, 
+                    name, 
+                    seat, 
+                    price: parseFloat(price), 
+                    image: imgURL, 
+                    status: 'pending' 
+                };
                 axiosSecure.post('/classes', createItem)
                     .then(data => {
-                        console.log(data.data);
                         if (data.data.insertedId) {
                             reset();
                             Swal.fire({

@@ -66,8 +66,8 @@ const NavBer = () => {
                                             </li>
                                             <li className='p-2
                                             hover:bg-orange-400'>
-                                                <Link to='/sports' className='default hover:text-white'>
-                                                    Sports
+                                                <Link to='/classes' className='default hover:text-white'>
+                                                    Classes
                                                 </Link>
                                             </li>
 

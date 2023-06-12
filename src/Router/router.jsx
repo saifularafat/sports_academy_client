@@ -6,9 +6,8 @@ import Terms from "../pages/Terms/Terms";
 import Login from "../pages/Login/Login";
 import Error from "../pages/Error/Error";
 import Trainers from "../pages/Trainers/Trainers";
-import Sports from "../pages/Home/Sports/Sports";
+import Classes from "../pages/Classes/Classes";
 import Blog from "../pages/Blog/Blog";
-import Contact from "../pages/Contact/Contact";
 import Dashboard from "../layouts/Dashboard";
 import MySelected from "../pages/Dashboard/AllUsers/MySelected/MySelected";
 import MyAdmission from "../pages/Dashboard/AllUsers/MyAdmission/MyAdmission";
@@ -34,16 +33,12 @@ const router = createBrowserRouter([
         element: <Trainers />
       },
       {
-        path: 'sports',
-        element: <Sports />
+        path: 'classes',
+        element: <Classes />
       },
       {
         path: 'blog',
         element: <Blog />
-      },
-      {
-        path: 'contact',
-        element: <Contact />
       },
     ]
   },
@@ -63,6 +58,7 @@ const router = createBrowserRouter([
   // dashboard router
   {
     path: '/dashboard',
+    // element: <Dashboard />,
     element: <PrivateRouter><Dashboard /></PrivateRouter>,
     children: [
       // users rout

@@ -35,7 +35,7 @@ const Nav = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/sports'
+                    <NavLink to='/classes'
                         className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
                         Classes

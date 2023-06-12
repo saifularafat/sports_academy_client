@@ -51,7 +51,7 @@ const SideBerTop = () => {
                     </div>
                 </Link>
                 <Link
-                    to='/sports'
+                    to='/classes'
                 >
                     <div className="bg-main_color text-white p-2 rounded-full">
                         <MdSportsEsports className="w-5 h-5" />

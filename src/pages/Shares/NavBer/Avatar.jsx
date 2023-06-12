@@ -6,11 +6,10 @@ const Avatar = () => {
         <img src={user && user?.photoURL ?
             user?.photoURL : img}
             title= {user?.displayName}
-            className="rounded-full"
+            className="rounded-full w-14 h-14"
             referrerPolicy="no-referrer"
             alt="Profile photo"
-            width='45'
-            height='45' />
+           />
     );
 };
 

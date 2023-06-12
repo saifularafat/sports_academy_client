@@ -26,7 +26,8 @@ const ManageAllUser = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`${import.meta.env.VITE_API_URL}/users/admin/${user._id}`, {
-                    method: 'PATCH'
+                    method: 'PATCH',
+                    headers: { authorization: `bearer ${localStorage.getItem('token_access')}` }
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -66,7 +67,7 @@ const ManageAllUser = () => {
                             refetch();
                             setButtonDisabled(true)
                             Swal.fire(
-                                'Admin!',
+                                'Instructor!',
                                 `${user.name} is an Instructor !`,
                                 'success'
                             )

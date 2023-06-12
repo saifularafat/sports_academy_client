@@ -9,7 +9,6 @@ export const useAdmin = () => {
         queryKey: ['isAdmin', user?.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/admin/${user?.email}`)
-            console.log('response admin', res);
             return res.data.admin
         }
     })
@@ -24,7 +23,6 @@ export const useInstructors = () => {
         enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/instructor/${user?.email}`)
-            console.log('response instructor', res);
             return res.data.instructor
         }
     })
