@@ -37,6 +37,13 @@
     @apply hover:shadow-2xl p-2 border-2 border-main_color rounded-lg hover:animate-pulse
 }
 
+/* Trainer */
+.trainer_btn{
+    @apply bg-main_color border-2 border-main_color text-white font-medium text-lg font-sans
+    py-2 px-4 rounded-xl tracking-wider hover:bg-color-btn
+    hover:border-color-btn transition duration-200 hover:animate-pulse
+}
+
 
 /* Social component */
 .social_style {

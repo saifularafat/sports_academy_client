@@ -19,7 +19,7 @@ const TrainerInstructor = ({ trainer }) => {
           <div className="md:text-right text-center">
             <Link to={`/details/${trainer?._id}`}>
             {/* <Link> */}
-              <button className="">See Classes</button>
+              <button className="trainer_btn">See Classes</button>
             </Link>
           </div>
         </div>

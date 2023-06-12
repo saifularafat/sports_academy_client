@@ -32,7 +32,7 @@ const Trainers = () => {
             title="All Trainers"
             subTitle="sk academy all class wonderful class"
           />
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
             {classTrainer.map((trainer) => (
               <TrainerInstructor
                 key={trainer._id}
