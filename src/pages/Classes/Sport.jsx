@@ -133,6 +133,24 @@ const Sport = ({ approvedSports }) => {
             </h2>
           </div>
           <div>
+            {/* {
+              user?.role === 'admin' && user?.role === 'instructor' ?
+                <>this is  text</>
+                :
+                <>
+                  <button
+                    onClick={() => handlerBookMark(approvedSports)}
+                    disabled={disabledCart}
+                    className="bg-orange-600 text-white p-[6px] px-4 rounded-xl uppercase mr-2">
+                    Add
+                  </button>
+                  <Link to={`/dashboard/payment/${approvedSports._id}`}>
+                    <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
+                      pay
+                    </button>
+                  </Link>
+                </>
+            } */}
             <button
               onClick={() => handlerBookMark(approvedSports)}
               disabled={disabledCart}

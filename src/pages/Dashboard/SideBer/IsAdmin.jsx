@@ -26,7 +26,7 @@ const IsAdmin = () => {
             </li>
             <li>
                 <Link
-                    to='/dashboard/payment'
+                    to='/dashboard/paymentHistory'
                     className='dash_btn'
                 >
                     <BsFillCalendarEventFill className='w-5 h-5' />

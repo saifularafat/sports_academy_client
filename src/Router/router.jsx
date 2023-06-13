@@ -19,6 +19,7 @@ import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
 import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Trainers/Details";
 import Update from "../pages/Dashboard/Instructors/Update";
+import PaymentHistory from "../pages/Dashboard/Admin/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/manageClasses',
         element: <ManageClasses />
+      },
+      {
+        path: '/dashboard/paymentHistory',
+        element: <PaymentHistory />
       },
     ]
   },
