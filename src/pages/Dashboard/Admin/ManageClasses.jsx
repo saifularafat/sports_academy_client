@@ -3,6 +3,7 @@ import DashSectionTitle from "../../../component/DashboardSectionTitle";
 import { useAllClasses } from "../../../api/useClasses";
 import Swal from "sweetalert2";
 import { useAxiosSecure } from "../../../api/useAxiosSecure";
+import MyModal from "../../../component/Modal";
 
 const ManageClasses = () => {
   const [Classes, refetch] = useAllClasses();
@@ -62,7 +63,7 @@ const ManageClasses = () => {
         title="Manage Classes"
         subTitle="All Instructors added by all Classes!"
       />
-     <h2 className="text-3xl font-medium p-4">Total Classes : {Classes.length}</h2>
+      <h2 className="text-3xl font-medium p-4">Total Classes : {Classes.length}</h2>
       <div
         data-aos="fade-down"
         data-aos-easing="linear"
@@ -85,7 +86,6 @@ const ManageClasses = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
             {Classes.map((item) => (
               <tr key={item._id}>
                 <td>
@@ -103,9 +103,9 @@ const ManageClasses = () => {
                 <td className="text-center">{item.seat}</td>
                 <td className="">${item.price}</td>
                 <td className="text-green-600 font-medium ">{item.status}</td>
-               <td>
+                <td>
                   {item?.status === "Approved" ? (
-                   "Approved"
+                    "Approved"
                   ) : (
                     <button
                       onClick={() => handleMakeApproved(item)}
@@ -117,7 +117,7 @@ const ManageClasses = () => {
                 </td>
                 <td>
                   {item?.status === "Pending" ? (
-                   "Pending"
+                    "Pending"
                   ) : (
                     <button
                       onClick={() => handleMakePending(item)}
@@ -129,10 +129,10 @@ const ManageClasses = () => {
                 </td>
                 <td>
                   {item?.status === "FeedBack" ? (
-                   "FeedBack"
+                    "FeedBack"
                   ) : (
                     <button
-                      onClick={() => handleMakePending(item)}
+                      onClick={MyModal}
                       className="btn btn-xs bg-red-500 lowercase text-base text-white"
                     >
                       FeedBack
@@ -144,157 +144,8 @@ const ManageClasses = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </div >
   );
 };
 
 export default ManageClasses;
-
-/* app.patch("/users/approved/:id", verifyJWT, async (req, res) => {
-      const id = req.params.id;
-      const filter = { _id: new ObjectId(id) };
-      const updateDoc = {
-        $set: {
-          status: "Approved",
-        },
-      };
-      const result = await classesCollection.updateOne(filter, updateDoc);
-      res.send(result);
-    });
-Mukhlesur Rhaman21:09
-<td>
-                  {classItem?.status === "Approved" ? (
-                    "Approved"
-                  ) : (
-                    <button
-                      onClick={() => handleMakeApproved(classItem)}
-                      className="btn btn-xs bg-[#D1A054] text-base text-white"
-                    >
-                      Approved
-                    </button>
-                  )}
-                </td>
-Mukhlesur Rhaman21:10
-const handleMakeApproved = (classItem) => {
-    axiosSecure
-      .patch(`/users/approved/${classItem._id}`)
-      .then((response) => {
-        const { data } = response;
-        if (data.modifiedCount) {
-          refetch();
-          toast.success(`${classItem?.instructorName} Your Class Added`);
-        }
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
-  };
-Mukhlesur Rhaman21:26
-import { toast } from "react-hot-toast";
-import useAxiosSecure from "../../../components/hooks/useAxiosSecure/useAxiosSecure";
-// import useClasses from "../../../components/hooks/useClasses/useClasses";
-import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../components/hooks/useAuth/useAuth";
-
-const ManageClass = () => {
-  // const [classes, refetch] = useClasses();
-  const [axiosSecure] = useAxiosSecure();
-  const { loading } = u */
-
-/* import { toast } from "react-hot-toast";
-import useAxiosSecure from "../../../components/hooks/useAxiosSecure/useAxiosSecure";
-// import useClasses from "../../../components/hooks/useClasses/useClasses";
-import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../components/hooks/useAuth/useAuth";
-
-const ManageClass = () => {
-  // const [classes, refetch] = useClasses();
-  const [axiosSecure] = useAxiosSecure();
-  const { loading } = u
-// status change by admin classes
-    app.patch("/users/approved/:id", verifyJWT, async (req, res) => {
-      const id = req.params.id;
-      const filter = { _id: new ObjectId(id) };
-      const updateDoc = {
-        $set: {
-          status: "Approved",
-        },
-      };
-      const result = await classesCollection.updateOne(filter, updateDoc);
-      res.send(result);
-    });
-
-    app.patch("/users/denied/:id", verifyJWT, async (req, res) => {
-      const id = req.params.id;
-      const fil */
-
-//       Mukhlesur Rhaman20:55
-// app.patch("/users/approved/:id", verifyJWT, async (req, res) => {
-//       const id = req.params.id;
-//       const filter = { _id: new ObjectId(id) };
-//       const updateDoc = {
-//         $set: {
-//           status: "Approved",
-//         },
-//       };
-//       const result = await classesCollection.updateOne(filter, updateDoc);
-//       res.send(result);
-//     });
-// Mukhlesur Rhaman21:09
-// <td>
-//                   {classItem?.status === "Approved" ? (
-//                     "Approved"
-//                   ) : (
-//                     <button
-//                       onClick={() => handleMakeApproved(classItem)}
-//                       className="btn btn-xs bg-[#D1A054] text-base text-white"
-//                     >
-//                       Approved
-//                     </button>
-//                   )}
-//                 </td>
-// Mukhlesur Rhaman21:10
-// const handleMakeApproved = (classItem) => {
-//     axiosSecure
-//       .patch(`/users/approved/${classItem._id}`)
-//       .then((response) => {
-//         const { data } = response;
-//         if (data.modifiedCount) {
-//           refetch();
-//           toast.success(`${classItem?.instructorName} Your Class Added`);
-//         }
-//       })
-//       .catch((error) => {
-//         toast.error(error.message);
-//       });
-//   };
-// Mukhlesur Rhaman21:26
-// import { toast } from "react-hot-toast";
-// import useAxiosSecure from "../../../components/hooks/useAxiosSecure/useAxiosSecure";
-// import useClasses from "../../../components/hooks/useClasses/useClasses";
-// import { Link } from "react-router-dom";
-// import { useQuery } from "@tanstack/react-query";
-// import useAuth from "../../../components/hooks/useAuth/useAuth";
-
-// const ManageClass = () => {
-// const [classes, refetch] = useClasses();
-//   const [axiosSecure] = useAxiosSecure();
-//   const { loading } = useAuth()
-// status change by admin classes
-// app.patch("/users/approved/:id", verifyJWT, async (req, res) => {
-//   const id = req.params.id;
-//   const filter = { _id: new ObjectId(id) };
-//   const updateDoc = {
-//     $set: {
-//       status: "Approved",
-//     },
-//   };
-//   const result = await classesCollection.updateOne(filter, updateDoc);
-//   res.send(result);
-// });
-
-// app.patch("/users/denied/:id", verifyJWT, async (req, res) => {
-//   const id = req.params.id;
-//   const fil

@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
-import DashSectionTitle from "../../../component/DashboardSectionTitle";
 import useAuth from "../../../component/useAuth";
 import { PulseLoader } from "react-spinners";
 import { Helmet } from "react-helmet-async";
-import { useAxiosSecure } from "../../../api/useAxiosSecure";
-import Swal from "sweetalert2";
+import DashSectionTitle from "../../../component/DashboardSectionTitle";
+import { useLoaderData } from "react-router-dom";
 
-const AddSports = () => {
+const Update = () => {
     const { user, loading } = useAuth();
     const {
         register,
@@ -15,66 +14,22 @@ const AddSports = () => {
         formState: { errors },
     } = useForm();
 
-    const [axiosSecure] = useAxiosSecure();
-
-    const hosting_image_url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_UPLOAD_KEY}`
-
-
-    const handleAddSubmit = (data) => {
-        const imageUrl = data.image[0];
-        const formData = new FormData();
-        formData.append('image', imageUrl)
-        fetch(hosting_image_url, {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => res.json())
-            .then(imageData => {
-                const imgURL = imageData.data.display_url;
-                const { instructorEmail, instructorName, name, price, seat } = data;
-                console.log(data);
-                const createItem = {
-                    email: instructorEmail,
-                    instructorName,
-                    sportsName:name,
-                    seat,
-                    price: parseFloat(price),
-                    image: imgURL,
-                    instructorImage: user?.photoURL,
-                    status: 'pending'
-                };
-                console.log(createItem);
-                axiosSecure.post('/classes', createItem)
-                    .then(data => {
-                        if (data.data.insertedId) {
-                            reset();
-                            Swal.fire({
-                                position: 'top-center',
-                                icon: 'success',
-                                title: 'New sport item added successfully',
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                        }
-                    })
-            })
-
-    }
-
+    const updateLoader = useLoaderData();
+    console.log(updateLoader);
     return (
         <div>
             <Helmet>
-                <title>SK Academy || Add Sports</title>
+                <title>SK Academy || Update From</title>
             </Helmet>
             <DashSectionTitle
-                name='Add Sports'
-                title='Add A Sports'
-                subTitle='Your sports class added now !'
+                name='update'
+                title='Update Sports'
+                subTitle='Your sports class update now !'
             />
             {/* TODO Title Name  */}
             <div className="flex items-center justify-center ">
                 <form
-                    onSubmit={handleSubmit(handleAddSubmit)}
+                    // onSubmit={handleSubmit(handleAddSubmit)}
                     className="space-y-2"
                     data-aos="fade-down"
                     data-aos-easing="linear"
@@ -201,11 +156,11 @@ const AddSports = () => {
                         >
                             {
                                 loading ? <PulseLoader className="mx-auto 
-                                    animate-pulse"
+                                animate-pulse"
                                     color="#FF3811"
                                     size={18} />
                                     :
-                                    'Add Class'
+                                    'Update'
                             }
 
                         </button>
@@ -217,4 +172,4 @@ const AddSports = () => {
     );
 };
 
-export default AddSports;
+export default Update;

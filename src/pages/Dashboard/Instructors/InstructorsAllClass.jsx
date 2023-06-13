@@ -4,7 +4,7 @@ import { instructorsFetch } from "../../../api/useClasses";
 import { Link } from "react-router-dom";
 
 const InstructorsAllClass = () => {
-    const [instructor, refetch] = instructorsFetch();
+    const [instructor] = instructorsFetch();
     console.log(instructor);
     return (
         <div>
@@ -39,13 +39,13 @@ const InstructorsAllClass = () => {
                                     <img src={item?.image} alt="Avatar Tailwind CSS Component" className="w-full" />
                                 </div>
                             </td>
-                            <td>{item?.sportsName}</td>
+                            <td><spna className="text-xl font-semibold">{item?.sportsName}</spna></td>
                             <td>{item?.status}</td>
                             <td>{item?.seat}</td>
                             <td>
-                            <Link to={`/Edit/${item?._id}`}>
-                                    <button>
-                                        Edit
+                                <Link to={`/dashboard/update/${item?._id}`}>
+                                    <button className="bg-main_color text-white text-lg font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200">
+                                        Update
                                     </button>
                                 </Link>
                             </td>

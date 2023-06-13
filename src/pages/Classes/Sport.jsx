@@ -2,7 +2,7 @@ import { FaAtlas, FaRegClock, FaUserNurse, FaDollarSign } from "react-icons/fa";
 import useAuth from "../../component/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Sport = ({ approvedSports }) => {
@@ -139,9 +139,11 @@ const Sport = ({ approvedSports }) => {
               className="bg-orange-600 text-white p-[6px] px-4 rounded-xl uppercase mr-2">
               Add
             </button>
-            <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
-              pay
-            </button>
+            <Link to={`/dashboard/payment/${approvedSports._id}`}>
+              <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
+                pay
+              </button>
+            </Link>
           </div>
         </div>
       </div>

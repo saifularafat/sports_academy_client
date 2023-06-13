@@ -26,13 +26,13 @@ export const instructorsFetch = () => {
 }
 
 // BookMark user Email
-export const BookMarkEmail = () => {
+export const BookMarkEmailFetch = () => {
     const { user } = useAuth();
     const { data: bookMark = [], refetch } = useQuery({
-        queryKey: ['bookMarks', user?.email],
+        queryKey: ['bookMark', user?.email],
         queryFn: async () => {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/bookMarks?email=${user?.email}`)
-            return res.json();
+            const data = await fetch(`${import.meta.env.VITE_API_URL}/bookMarks?email=${user?.email}`)
+            return data.json();
         }
     })
     return [bookMark, refetch]

@@ -17,6 +17,8 @@ import InstructorsAllClass from "../pages/Dashboard/Instructors/InstructorsAllCl
 import ManageAllUser from "../pages/Dashboard/Admin/ManageAllUser";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
 import PrivateRouter from "./PrivateRouter";
+import Details from "../pages/Trainers/Details";
+import Update from "../pages/Dashboard/Instructors/Update";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,12 @@ const router = createBrowserRouter([
       {
         path: 'trainers',
         element: <Trainers />
+      },
+      {
+        path: '/details/:id',
+        element: <Details />,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/classes/${params.id}`)
+        // fetch(`${import.meta.env.VITE_API_URL}/classes?email=${params?.email})
       },
       {
         path: 'classes',
@@ -71,8 +79,8 @@ const router = createBrowserRouter([
         element: <MyAdmission />
       },
       {
-        path: '/dashboard/payment',
-        element: <Payment />
+        path: '/dashboard/payment/:id',
+        element: <PrivateRouter><Payment /></PrivateRouter>
       },
       // Instructors rout
       {
@@ -82,6 +90,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/instructorsAllClass',
         element: <InstructorsAllClass />
+      },
+      {
+        path: '/dashboard/update/:id',
+        element: <Update />,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/classes/${params.id}`)
       },
       // Admin route
       {
