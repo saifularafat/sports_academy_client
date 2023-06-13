@@ -4,7 +4,7 @@ import DashSectionTitle from "../../../../component/DashboardSectionTitle";
 const MyAdmission = () => {
     return (
         <div>
-            <Helmet><title>SK Academy || My Enro</title></Helmet>
+            <Helmet><title>SK Academy || My Enrol</title></Helmet>
             <DashSectionTitle
                 name='Admission'
                 title='My Admission'

@@ -6,10 +6,11 @@ import TrainerInstructor from "./TrainerInstructor";
 import SectionTitle from "../../component/sectionTitle";
 const Trainers = () => {
   const [users] = allUsers();
-  //   console.log(users);
+    console.log(users);
   const classTrainer = users.filter(
     (trainers) => trainers.role === "instructor"
   );
+  
   return (
     <div className="">
       <div

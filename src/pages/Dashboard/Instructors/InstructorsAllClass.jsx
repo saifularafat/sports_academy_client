@@ -1,7 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import DashSectionTitle from "../../../component/DashboardSectionTitle";
+import { instructorsFetch } from "../../../api/useClasses";
+import { Link } from "react-router-dom";
 
 const InstructorsAllClass = () => {
+    const [instructor, refetch] = instructorsFetch();
+    console.log(instructor);
     return (
         <div>
             <Helmet><title>SK Academy || All Classes</title></Helmet>
@@ -19,7 +23,7 @@ const InstructorsAllClass = () => {
                     {/* head */}
                     <thead>
                         <tr className="text-xl text-center">
-                            <th>Class Id</th>
+                            <th>Image</th>
                             <th>Sports</th>
                             <th>Status</th>
                             <th>Total Student</th>
@@ -27,14 +31,25 @@ const InstructorsAllClass = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr className="bg-base-200 text-lg text-center">
-                            <th>1</th>
-                            <td>cricket</td>
-                            <td>Approved</td>
-                            <td>12</td>
-                            <td>Edit</td>
-                        </tr>
+                        {instructor.map(item => <tr
+                            key={item._id}
+                            className="bg-base-200 text-lg text-center">
+                            <td>
+                                <div className="mask mask-squircle w-20 h-16">
+                                    <img src={item?.image} alt="Avatar Tailwind CSS Component" className="w-full" />
+                                </div>
+                            </td>
+                            <td>{item?.sportsName}</td>
+                            <td>{item?.status}</td>
+                            <td>{item?.seat}</td>
+                            <td>
+                            <Link to={`/Edit/${item?._id}`}>
+                                    <button>
+                                        Edit
+                                    </button>
+                                </Link>
+                            </td>
+                        </tr>)}
                     </tbody>
                 </table>
             </div>

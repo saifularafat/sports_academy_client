@@ -15,7 +15,7 @@ const TrainerInstructor = ({ trainer }) => {
         <div className="card-body">
           <h2 className="card-title sub_title">Name: {trainer?.name}</h2>
           <h2 className="card-title text-sm">Email: {trainer?.email}</h2>
-          {/* <h2>Coach: Head coach</h2> */}
+          <h2>Coach: Head coach</h2>
           <div className="md:text-right text-center">
             <Link to={`/details/${trainer?._id}`}>
             {/* <Link> */}

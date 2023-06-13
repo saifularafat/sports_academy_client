@@ -6,5 +6,5 @@ export const allUsers = () => {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/users`)
         return res.json()
     })
-    return[users, refetch]
+    return [users, refetch]
 }
