@@ -33,15 +33,17 @@ const AddSports = () => {
                 const imgURL = imageData.data.display_url;
                 const { instructorEmail, instructorName, name, price, seat } = data;
                 console.log(data);
-                const createItem = { 
-                    instructorEmail, 
-                    instructorName, 
-                    name, 
-                    seat, 
-                    price: parseFloat(price), 
-                    image: imgURL, 
-                    status: 'pending' 
+                const createItem = {
+                    email: instructorEmail,
+                    instructorName,
+                    sportsName:name,
+                    seat,
+                    price: parseFloat(price),
+                    image: imgURL,
+                    instructorImage: user?.photoURL,
+                    status: 'pending'
                 };
+                console.log(createItem);
                 axiosSecure.post('/classes', createItem)
                     .then(data => {
                         if (data.data.insertedId) {
