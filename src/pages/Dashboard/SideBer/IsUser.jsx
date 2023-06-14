@@ -1,5 +1,5 @@
 import { BsFillBookmarkPlusFill } from "react-icons/bs";
-import { SiKhanacademy } from "react-icons/si";
+import { FaWallet } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const IsUser = () => {
@@ -19,7 +19,7 @@ const IsUser = () => {
                     to='/dashboard/myAdmission'
                     className='dash_btn'
                 >
-                    <SiKhanacademy className='w-5 h-5' />
+                    <FaWallet className='w-6 h-6' />
                     <span className='mx-4 font-medium'> My Enroll</span>
                 </Link>
             </li>

@@ -3,12 +3,19 @@ import useAuth from "../../component/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Sport = ({ approvedSports }) => {
-  console.log(approvedSports);
+  // console.log(approvedSports);
   const { user } = useAuth();
-  const [disabledCart, setDisabledCart] = useState(false);
+  const [parson, setParson] = useState();
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_API_URL}/users/${user?.email}`)
+      .then(data => {
+        setParson(data.data);
+      })
+  }, [user])
+  console.log(user);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,7 +47,6 @@ const Sport = ({ approvedSports }) => {
             });
           }
         })
-      setDisabledCart(true);
     }
     else {
       Swal.fire({
@@ -151,9 +157,30 @@ const Sport = ({ approvedSports }) => {
                   </Link>
                 </>
             } */}
-            <button
+            {
+              parson?.role == 'student' ? <>
+
+                <button
+                  onClick={() => handlerBookMark(approvedSports)}
+                  className="bg-orange-600 text-white p-[6px] px-4 rounded-xl uppercase mr-2">
+                  Add
+                </button>
+                <Link to={`/dashboard/payment/${approvedSports._id}`}>
+                  <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
+                    pay
+                  </button>
+                </Link>
+              </>
+                :
+                <>
+                  <div className="flex items-center mt-4 gap-6">
+                    <p className="text-yellow-400 text-lg font-medium">Add</p>
+                    <p className="text-red-500 text-lg font-medium">Pay</p>
+                  </div>
+                </>
+            }
+            {/* <button
               onClick={() => handlerBookMark(approvedSports)}
-              disabled={disabledCart}
               className="bg-orange-600 text-white p-[6px] px-4 rounded-xl uppercase mr-2">
               Add
             </button>
@@ -161,7 +188,7 @@ const Sport = ({ approvedSports }) => {
               <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
                 pay
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

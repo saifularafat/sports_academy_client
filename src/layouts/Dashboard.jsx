@@ -6,6 +6,7 @@ import DashboardSideFooter from "../component/DashboardSideFooter";
 import IsAdmin from "../pages/Dashboard/SideBer/IsAdmin";
 import IsInstructors from "../pages/Dashboard/SideBer/IsInstructors";
 import { useAdmin, useInstructors } from "../api/useRoleDashboard";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
     // const isAdmin = true;
@@ -13,6 +14,9 @@ const Dashboard = () => {
     const [isInstructors] = useInstructors();
     return (
         <div className="max-w-7xl">
+            <Helmet>
+                <title>SK Academy || Dashboard </title>
+            </Helmet>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content md:ml-6 ml-0 md:pt-12">

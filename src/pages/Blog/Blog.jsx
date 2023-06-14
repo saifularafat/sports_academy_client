@@ -18,7 +18,7 @@ const Blog = () => {
             <div className="mb-10">
                 <Container>
                     <Helmet>
-                        <title>SK Academy || Classes</title>
+                        <title>SK Academy || Blog</title>
                     </Helmet>
                     <SectionTitle
                         name="Blog"

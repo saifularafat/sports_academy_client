@@ -1,5 +1,5 @@
-import { BsFillBookmarkPlusFill } from "react-icons/bs";
-import { SiKhanacademy } from "react-icons/si";
+import { FaReplyAll } from "react-icons/fa";
+import { MdSportsVolleyball } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const IsInstructors = () => {
@@ -10,7 +10,7 @@ const IsInstructors = () => {
                     to='/dashboard/instructorsAllClass'
                     className='dash_btn'
                 >
-                    <BsFillBookmarkPlusFill className='w-5 h-5' />
+                    <FaReplyAll className='w-6 h-6' />
                     <span className='mx-4 font-medium'>My All Sports</span>
                 </Link>
             </li>
@@ -19,7 +19,7 @@ const IsInstructors = () => {
                     to='/dashboard/addSports'
                     className='dash_btn'
                 >
-                    <SiKhanacademy className='w-5 h-5' />
+                    <MdSportsVolleyball className='w-6 h-6' />
                     <span className='mx-4 font-medium'> Add Sports</span>
                 </Link>
 

@@ -55,7 +55,8 @@ const SignUp = () => {
                                     name: data.name,
                                     email: data.email,
                                     image: imageAdders,
-                                    role: data.role,
+                                    // role: data.role,
+                                    role: 'student'
                                 })
                                     .then(data => {
                                         if (data.insertedId) {
