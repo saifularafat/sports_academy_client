@@ -1,10 +1,14 @@
-// import { useAllInstructors } from "../../../api/usePopularClass";
+import { allUsers } from "../../../api/useUsers";
 import Container from "../../../component/Container";
 import SectionTitle from "../../../component/sectionTitle";
 import Coach from "./Coach";
 
 const PopularCoach = () => {
-    // const [instructors] = useAllInstructors();
+    const [users] = allUsers();
+    console.log(users);
+    const classTrainer = users.filter(
+        (trainers) => trainers.role === "instructor"
+    );
     return (
         <div>
             <SectionTitle
@@ -15,7 +19,7 @@ const PopularCoach = () => {
             <Container>
                 <div className="grid md:grid-cols-3 grid-cols-1 gap-x-3 gap-y-8 mb-20">
                     {
-                        instructors.map(persons => <Coach
+                        classTrainer.slice(1, 7).map(persons => <Coach
                             key={persons._id}
                             person={persons}
                         ></Coach>)

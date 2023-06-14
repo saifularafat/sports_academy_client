@@ -31,7 +31,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
-                <img src={banner1} className="w-full " />
+                <img src={banner6} className="w-full " />
                 <div className="absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                     <Paragraph
@@ -50,7 +50,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-                <img src={banner3} className="w-full " />
+                <img src={banner1} className="w-full " />
                 <div className="absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                     <Paragraph
@@ -89,7 +89,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide5" className="carousel-item relative w-full">
-                <img src={banner5} className="w-full " />
+                <img src={banner3} className="w-full " />
                 <div className="absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <Paragraph
                         one='WELCOME'
@@ -107,7 +107,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide6" className="carousel-item relative w-full">
-                <img src={banner6} className="w-full " />
+                <img src={banner5} className="w-full " />
                 <div className="absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                     <Paragraph
