@@ -3,7 +3,10 @@ import Button from "../../../component/Button";
 const Sports = ({ popular }) => {
     console.log(popular);
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="card w-96 bg-base-100 shadow-xl">
             <figure>
                 <img src={popular?.classImage} alt="Sport" className="w-full h-64" />
             </figure>

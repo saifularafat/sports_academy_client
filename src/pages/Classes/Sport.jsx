@@ -9,6 +9,7 @@ const Sport = ({ approvedSports }) => {
   // console.log(approvedSports);
   const { user } = useAuth();
   const [parson, setParson] = useState();
+  console.log(parson);
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/users/${user?.email}`)
       .then(data => {
@@ -139,26 +140,8 @@ const Sport = ({ approvedSports }) => {
             </h2>
           </div>
           <div>
-            {/* {
-              user?.role === 'admin' && user?.role === 'instructor' ?
-                <>this is  text</>
-                :
-                <>
-                  <button
-                    onClick={() => handlerBookMark(approvedSports)}
-                    disabled={disabledCart}
-                    className="bg-orange-600 text-white p-[6px] px-4 rounded-xl uppercase mr-2">
-                    Add
-                  </button>
-                  <Link to={`/dashboard/payment/${approvedSports._id}`}>
-                    <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
-                      pay
-                    </button>
-                  </Link>
-                </>
-            } */}
             {
-              parson?.role == 'student' ? <>
+              parson?.[0]?.role == 'student' ? <>
 
                 <button
                   onClick={() => handlerBookMark(approvedSports)}
@@ -179,16 +162,6 @@ const Sport = ({ approvedSports }) => {
                   </div>
                 </>
             }
-            {/* <button
-              onClick={() => handlerBookMark(approvedSports)}
-              className="bg-orange-600 text-white p-[6px] px-4 rounded-xl uppercase mr-2">
-              Add
-            </button>
-            <Link to={`/dashboard/payment/${approvedSports._id}`}>
-              <button className="bg-main_color text-white p-[6px] rounded-xl px-4 uppercase">
-                pay
-              </button>
-            </Link> */}
           </div>
         </div>
       </div>

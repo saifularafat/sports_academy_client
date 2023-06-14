@@ -1,4 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
+import { BsGithub } from "react-icons/bs";
 import useAuth from "../../../component/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -87,7 +88,7 @@ const SocialSignIn = () => {
             <div
                 onClick={handlerGitHubLogin}
                 className='social_style'>
-                <FcGoogle size={32} />
+                <BsGithub size={32} />
                 <p>Continue with Google</p>
             </div>
         </div>
