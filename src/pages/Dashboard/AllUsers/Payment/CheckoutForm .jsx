@@ -7,8 +7,8 @@ import useAuth from "../../../../component/useAuth";
 import Swal from "sweetalert2";
 
 const CheckOutFrom = ({ payment }) => {
-    const { price, className, _id, instructorEmail } = payment;
-    console.log("pyment ", payment);
+    const { price, className, _id, instructorEmail, classImage } = payment;
+    console.log("payment 11", payment);
     const stripe = useStripe();
     const elements = useElements();
     const [axiosSecure] = useAxiosSecure();
@@ -71,11 +71,11 @@ const CheckOutFrom = ({ payment }) => {
                 price: price,
                 date: new Date(),
                 className: className,
+                classImage: classImage,
                 bookedId: _id,
                 instructorEmail: instructorEmail,
             };
             axiosSecure.post("/payments", payment).then((res) => {
-                // console.log(res.data);
 
                 if (res.data.insertResult.insertedId) {
                     fetch(`${import.meta.env.VITE_API_URL}/paymentBookMaker/${_id}`,
@@ -88,7 +88,7 @@ const CheckOutFrom = ({ payment }) => {
                             Swal.fire({
                                 position: 'top-center',
                                 icon: 'success',
-                                title: `${'payment successful', data.data}`,
+                                title: 'payment successful',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -125,7 +125,7 @@ const CheckOutFrom = ({ payment }) => {
                     Pay
                 </button>
             </form>
-            
+
             {cardError && <p className="text-red-600">{cardError}</p>}
             {transactionId && (
                 <p className="text-green-600 ml-8">

@@ -11,9 +11,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_KEY);
 
 const Payment = () => {
     const { id } = useParams();
-    console.log("id lagbe ", id);
     const [payment, setPayment] = useState({});
-    console.log("payment", payment);
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_URL}/singleBookMarks/${id}`)
             .then((res) => res.json())

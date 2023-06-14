@@ -1,10 +1,10 @@
-import { useAllInstructors } from "../../../api/useCoach";
+// import { useAllInstructors } from "../../../api/usePopularClass";
 import Container from "../../../component/Container";
 import SectionTitle from "../../../component/sectionTitle";
 import Coach from "./Coach";
 
 const PopularCoach = () => {
-    const [instructors] = useAllInstructors();
+    // const [instructors] = useAllInstructors();
     return (
         <div>
             <SectionTitle

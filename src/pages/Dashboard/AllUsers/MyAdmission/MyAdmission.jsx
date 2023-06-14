@@ -1,8 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import DashSectionTitle from "../../../../component/DashboardSectionTitle";
+import { userEmailToPayment } from "../../../../api/usePayment";
 
 const MyAdmission = () => {
-    // TODO ENROL USER
+    const [payments] = userEmailToPayment();
+    console.log(payments);
     return (
         <div>
             <Helmet><title>SK Academy || My Enrol</title></Helmet>
@@ -16,43 +18,34 @@ const MyAdmission = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
-                            <th>
-                                #
-                            </th>
-                            <th>image</th>
-                            <th>Name</th>
-                            <th>sport name</th>
+                        <tr className="text-lg">
+                            <th>Class</th>
+                            <th>InstructorEmail</th>
                             <th>amount</th>
+                            <th>TransitionId</th>
                             <th>payment</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
+                        {payments.map(pay => <tr key={pay?._id}>
+
                             <td>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
+                                <span className="text-base font-medium">{pay?.className}</span>
                             </td>
                             <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
+                                {pay?.instructorEmail}
                             </td>
                             <td>
-                                Hare pater
+                                ${pay?.price}
                             </td>
                             <td>
-                                Football
+                                ${pay?.transactionId}
                             </td>
-                            <td>$ 123 </td>
                             <td>
                                 <p className=" text-sm text-green-500 bg-slate-200 text-center py-2 rounded-lg">confirm</p>
                             </td>
-                        </tr>
+                        </tr>)}
+
                     </tbody>
 
                 </table>
