@@ -4,14 +4,13 @@
 https://sk-academe.web.app/
 
 ## **Website Info**
-- You can find SK academy 
-- First comes some details about sliders and robots
-- The About section has some details about allowed robots
-- Robot gallery has pictures of robots in fashion
-- The three leaders of the robots are taken in the subtitle. It's about the car robot car.
-- All robot routes have information about the robots, if anyone wants to see how much the price has been paid,
-- The number of robots added by the user is given in the my toy section, he can edit and delete both.
-- Questions are answered in the blog section,
+- You can find SK academy full mendings Sports Kings Academy
+- This is a sports website where players can train for a small amount of money.
+- And with the help of this you can enroll in classes, you can pay
+- You can save your favorite classes, you can save it, the coach can see what classes are there.
+- You can visit all the facilities, you can see everything.
+- You can get the field, etc., you will get good food. , the gym has everything you need.
+- Questions are answered in the blog,
 - There are both login and register, you can logout if you want
 
 ## Installation
@@ -28,6 +27,8 @@ https://sk-academe.web.app/
 - [JWT]
 - [ Query ],
 - [ firebase]
+- [ others ]
+
 ***Usage***
 @Programming Hero team
 @only me
@@ -39,6 +40,7 @@ web design and developer
 
 ## License
 upcoming License 
+Number by - 12
 
 ## Credits
 Jhanker mahbub bai and all his teammates HAPPY LIFE
