@@ -20,6 +20,7 @@ import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Trainers/Details";
 import Update from "../pages/Dashboard/Instructors/Update";
 import PaymentHistory from "../pages/Dashboard/Admin/PaymentHistory";
+import AdminRouter from "./AdminRouter";
 
 const router = createBrowserRouter([
   {
@@ -100,15 +101,15 @@ const router = createBrowserRouter([
       // Admin route
       {
         path: '/dashboard/manageAllUsers',
-        element: <ManageAllUser />
+        element: <AdminRouter><ManageAllUser /></AdminRouter>
       },
       {
         path: '/dashboard/manageClasses',
-        element: <ManageClasses />
+        element: <AdminRouter><ManageClasses /></AdminRouter>
       },
       {
         path: '/dashboard/paymentHistory',
-        element: <PaymentHistory />
+        element: <AdminRouter><PaymentHistory /></AdminRouter>
       },
     ]
   },
