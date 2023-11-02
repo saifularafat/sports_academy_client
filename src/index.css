@@ -2,79 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* NavBer style */
 .active {
-    @apply  py-2 px-4 text-lg font-sans font-semibold text-yellow-400 uppercase border-b-2  border-yellow-600
-    rounded-lg tracking-wide transition duration-200
+  @apply py-2 px-4 text-lg font-sans font-semibold text-yellow-400 uppercase border-b-2  border-yellow-600
+    rounded-lg tracking-wide transition duration-200;
 }
 .default {
-    @apply  py-2 px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide
+  @apply py-2 px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide;
 }
 
 /* Banner section */
 .banner {
-    @apply text-6xl font-semibold md:w-96 hidden md:block
+  @apply text-6xl font-semibold md:w-96 hidden md:block;
 }
 
 .coachName {
-    @apply text-2xl text-main_color font-mono font-semibold tracking-wide pr-4 text-center pb-4 md:pb-0
+  @apply text-2xl text-main_color font-mono font-semibold tracking-wide pr-4 text-center pb-4 md:pb-0;
 }
-
-
 
 /* SignUp style */
 .form_label {
-    @apply text-title-color mb-2 text-lg font-medium
+  @apply text-title-color mb-2 text-lg font-medium;
 }
 
 .input_style {
-    @apply w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-main_color bg-gray-200 text-gray-800
+  @apply w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-main_color bg-gray-200 text-gray-800;
 }
 
 /* About section */
 .sports_div {
-    @apply hover:shadow-2xl p-2 border-2 border-main_color rounded-lg hover:animate-pulse
+  @apply hover:shadow-2xl p-2 border-2 border-main_color rounded-lg hover:animate-pulse;
 }
 
 /* Trainer */
-.trainer_btn{
-    @apply bg-main_color border-2 border-main_color text-white font-medium text-lg font-sans
+.trainer_btn {
+  @apply bg-main_color border-2 border-main_color text-white font-medium text-lg font-sans
     py-2 px-4 rounded-xl tracking-wider hover:bg-color-btn
-    hover:border-color-btn transition duration-200 hover:animate-pulse
+    hover:border-color-btn transition duration-200 hover:animate-pulse;
 }
-
 
 /* Social component */
 .social_style {
-    @apply flex justify-center items-center space-x-2 border m-3 p-2 border-green-900 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer
+  @apply flex justify-center items-center space-x-2 border m-3 p-2 border-green-900 hover:bg-green-950 rounded-md transition duration-200 hover:text-white text-base cursor-pointer;
 }
 
 /* Dashboard style */
-.dash_btn{
-    @apply flex w-full text-lg items-center px-5 py-2 mt-1 text-main_color hover:bg-gray-400 
-    transition-colors duration-300 transform rounded-md
+.dash_btn {
+  @apply flex w-full text-lg items-center px-5 py-2 mt-1 text-main_color hover:bg-gray-400 
+    transition-colors duration-300 transform rounded-md;
 }
-.dark_btn{
-    @apply flex w-full text-lg items-center px-5 py-1 text-main_color hover:bg-slate-400 
-    transition duration-300 transform
+.dark_btn {
+  @apply flex w-full text-lg items-center px-5 py-1 text-main_color hover:bg-slate-400 
+    transition duration-300 transform;
 }
-
-
-
 
 /* terms And Condition */
 .terms_btn {
-    @apply py-3 px-6 text-2xl font-serif font-semibold border rounded-xl bg-gradient-to-r from-green-800 to-color-btn text-white hover:border-main_color hover:text-white transition duration-200
+  @apply py-3 px-6 text-2xl font-serif font-semibold border rounded-xl bg-gradient-to-r from-green-800 to-color-btn text-white hover:border-main_color hover:text-white transition duration-200;
 }
 
 /* Footer style */
 .fontStyle {
-    @apply py-3 md:px-4 px-1 bg-main_color text-white rounded-md text-center hover:opacity-80 transition duration-200 hover:animate-bounce
+  @apply py-3 md:px-4 px-1 bg-main_color text-white rounded-md text-center hover:opacity-80 transition duration-200 hover:animate-bounce;
 }
 
 /* Error style */
-.error_btn{
-    @apply text-lg text-main_color font-semibold uppercase py-2 px-6 border-2 border-main_color rounded-md hover:bg-main_color
-     hover:text-white transition duration-300 hover:shadow-inner hover:shadow-green-400
+.error_btn {
+  @apply text-lg text-main_color font-semibold uppercase py-2 px-6 border-2 border-main_color rounded-md hover:bg-main_color
+     hover:text-white transition duration-300 hover:shadow-inner hover:shadow-green-400;
 }
+
+/* Comments */
+/* .input_filed {
+  @apply h-16 text-slate-600 flex items-center justify-between p-3 m-3 rounded-l-md focus:outline-none border border-slate-200 cursor-pointer mb-2 bg-zinc-200;
+} */

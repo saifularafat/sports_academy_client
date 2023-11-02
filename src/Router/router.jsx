@@ -21,6 +21,7 @@ import Details from "../pages/Trainers/Details";
 import Update from "../pages/Dashboard/Instructors/Update";
 import PaymentHistory from "../pages/Dashboard/Admin/PaymentHistory";
 import AdminRouter from "./AdminRouter";
+import Post from "../pages/CommentInfo/Post";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path: 'blog',
         element: <Blog />
       },
+      {
+        path: 'comment',
+        element: <Post />
+      }
     ]
   },
   // login and SignUP from router

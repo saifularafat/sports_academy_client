@@ -52,7 +52,7 @@ const Terms = () => {
 
                 </div>
                 <div className="text-center pb-7">
-                    <Link to='/signUp'>
+                    <Link to='/register'>
                         <button className="terms_btn"> Go Back </button>
                     </Link>
                 </div>
