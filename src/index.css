@@ -17,7 +17,7 @@
 }
 
 .coachName {
-  @apply text-2xl text-main_color font-mono font-semibold tracking-wide pr-4 text-center pb-4 md:pb-0;
+  @apply text-2xl font-mono font-semibold tracking-wide pr-4 text-center pb-4 md:pb-0;
 }
 
 /* SignUp style */

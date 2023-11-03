@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Paragraph = ({ one, two, three, four, coachName, label, adders, colors }) => {
+const Paragraph = ({ one, two, three, four, coachName, label, adders, colors, coachText, coachTextBar  }) => {
 
     return (
         <div className='text-white space-y-6 w-full relative left-24 md:left-3/4 items-center mt-16 '>
@@ -8,11 +8,11 @@ const Paragraph = ({ one, two, three, four, coachName, label, adders, colors }) 
                 {colors}
                 <span className="">{one}</span> <br />
                 <span className="md:pl-12">{two}</span><br />
-                <span className="text-start">{three}</span><br />
+                <span className="text-start uppercase">{three}</span><br />
                 <span className="md:pl-12">{four}</span>
             </h2>
             <div className="md:flex items-center justify-center">
-                <p className='coachName' style={{ lineHeight: '20px' }}>{coachName}<br /> <span className="text-lg font-normal">(Head Coach)</span></p>
+                <p className={`${coachText} coachName`} style={{ lineHeight: '20px' }}>{coachName}<br /> <span className={`${coachTextBar} text-lg font-normal`}>(Head Coach)</span></p>
                 <Link to={adders}
                     className="border-2 hidden md:block border-green-800 hover:border-color-btn text-xl font-mono font-medium rounded-xl py-2 px-5 relative md:inline-flex items-center justify-start overflow-hidden transition-all group">
 

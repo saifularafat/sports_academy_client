@@ -12,16 +12,18 @@ const Banner = () => {
         <div className="carousel w-full md:h-[600px] h-full">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={banner2} className="w-full " />
-                <div className="absolute flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className=" absolute flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                     <Paragraph
                         one='WELCOME'
                         two='TO BEST'
-                        three='FOOTBALL'
+                        three='CRICKET'
                         four='ACADEMY'
-                        coachName='Tom'
-                        label='Football'
+                        coachName='Headmer '
+                        label='Cricket'
                         adders='/'
+                        coachText="text-slate-300"
+                        coachTextBar="text-orange-300"
                     />
 
                 </div>
@@ -37,10 +39,12 @@ const Banner = () => {
                     <Paragraph
                         one='WELCOME'
                         two='TO BEST'
-                        three='FOOTBALL'
+                        three='Surfing'
                         four='ACADEMY'
-                        coachName='Tom'
-                        label='Football'
+                        coachText="text-slate-300"
+                        coachTextBar="text-orange-300"
+                        coachName='Alan Doe'
+                        label='Surf'
                         adders='/'
                     />
                 </div>
@@ -57,10 +61,12 @@ const Banner = () => {
                     colors={'black'}
                         one='WELCOME'
                         two='TO BEST'
-                        three='FOOTBALL'
+                        three='BaseBall'
                         four='ACADEMY'
-                        coachName='Tom'
-                        label='Football'
+                        coachName='Watson Sen'
+                        coachText="text-green-800"
+                        coachTextBar="text-red-200"
+                        label='Baseball'
                         adders='/'
                     />
                 </div>
@@ -71,15 +77,17 @@ const Banner = () => {
             </div>
             <div id="slide4" className="carousel-item relative w-full">
                 <img src={banner4} className="w-full " />
-                <div className="absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className=" absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                     <Paragraph
                         one='WELCOME'
                         two='TO BEST'
-                        three='FOOTBALL'
+                        three='Marathon'
                         four='ACADEMY'
-                        coachName='Tom'
-                        label='Football'
+                        coachName='Nill Sam'
+                        coachText="text-sky-800"
+                        coachTextBar="text-black"
+                        label='Running'
                         adders='/'
                     />
                 </div>
@@ -90,13 +98,15 @@ const Banner = () => {
             </div>
             <div id="slide5" className="carousel-item relative w-full">
                 <img src={banner3} className="w-full " />
-                <div className="absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className=" absolute flex items-center  left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <Paragraph
                         one='WELCOME'
                         two='TO BEST'
                         three='FOOTBALL'
                         four='ACADEMY'
-                        coachName='Tom'
+                        coachName='Peter Son'
+                        coachText="text-slate-200"
+                        coachTextBar="text-red-600"
                         label='Football'
                         adders='/'
                     />
@@ -113,10 +123,12 @@ const Banner = () => {
                     <Paragraph
                         one='WELCOME'
                         two='TO BEST'
-                        three='FOOTBALL'
+                        three='Skying'
                         four='ACADEMY'
-                        coachName='Tom'
-                        label='Football'
+                        coachName='Sen Wood'
+                        coachText="text-green-300"
+                        coachTextBar="text-red-400"
+                        label='Sky'
                         adders='/'
                     />
                 </div>
