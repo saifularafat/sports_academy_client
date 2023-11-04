@@ -4,11 +4,11 @@ import { FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import { BsInstagram, BsTiktok, BsTwitter, BsYoutube } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-import logo from '../../../assets/sk-logo.png'
+import logo from '../../../assets/sks_logo.png'
 const Footer = () => {
     return (
         <>
-            <div className="bg-green-500 p-10">
+            <div className="bg-green-400 p-2">
                 <h2 className="md:text-3xl text-xl md:py-4 py-2 text-white font-semibold">Follow Now</h2>
                 <div className="grid lg:grid-cols-7 md:grid-cols-4 grid-cols-2 md:gap-10 gap-5 py-5">
                     <div className="fontStyle">
@@ -53,7 +53,7 @@ const Footer = () => {
                 </div>
                 <footer className="footer mx-auto pb-5">
                     <div className="mx-auto">
-                        <img src={logo} alt="" width={70} height={70} />
+                        <img src={logo} alt="" width={200} height={100} />
                         <p className="text-2xl" style={{ lineHeight: '24px' }}>SK Academe Ltd.<br /><span className="text-base" >The sports club has been producing <br /> good players since 2013.</span></p>
                     </div>
                     <div className="mx-auto">
