@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import Profile from "./Profile";
 import useAuth from "../../../component/useAuth";
 import Swal from "sweetalert2";
+import DarkLight from "./DarkLight";
 
 const Nav = () => {
     const { user, logOut } = useAuth();
@@ -19,7 +20,7 @@ const Nav = () => {
     }
     return (
         <nav>
-            <ul className="md:flex items-center gap-x-4 text-white hidden">
+            <ul className="md:flex items-center gap-x-2 text-white hidden">
                 <li>
                     <NavLink to='/'
                         className={({ isActive }) => (isActive ? 'active' : 'default')}
@@ -55,26 +56,30 @@ const Nav = () => {
                         Dashboard
                     </NavLink>
                 </li>
+                {/* dark  and light mode*/}
+                <div className="">
+                    <DarkLight />
+                </div>
                 {
                     user ?
-                        <span className="flex items-center gap-x-4 ml-12 ">
+                        <span className="flex items-center gap-x-2">
                             <button
-                                className='bg-white text-main_color py-[6px] px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide hover:opacity-70'
+                                className='bg-white/30 text-white shadow-slate-500 shadow-2xl py-2 px-4 text-base font-medium uppercase rounded-lg tracking-wide hover:bg-white/20 hover:text-white duration-200 transition-all'
                                 onClick={handlerLogOut}>
                                 Log Out
                             </button>
                             <span className=' '>
-                                    <Profile />
+                                <Profile />
                             </span>
                         </span>
                         :
-                        <div className='flex items-center gap-x-4'>
+                        <div className='flex items-center gap-x-2'>
                             <NavLink
                                 to='login'
-                                className='bg-white text-main_color py-[6px] px-4 text-lg font-sans font-semibold uppercase rounded-lg tracking-wide hover:opacity-70'>
+                                className='bg-white/30 text-white shadow-slate-500 shadow-2xl py-2 px-4 text-base font-medium uppercase rounded-lg tracking-wide hover:bg-white/20 hover:text-white duration-200 transition-all'>
                                 Login
                             </NavLink>
-                                <Profile />
+                            <Profile />
                         </div>
                 }
             </ul>
