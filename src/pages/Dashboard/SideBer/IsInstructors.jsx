@@ -10,8 +10,8 @@ const IsInstructors = () => {
                     to='/dashboard/instructorsAllClass'
                     className='dash_btn'
                 >
-                    <FaReplyAll className='w-6 h-6' />
-                    <span className='mx-4 font-medium'>My All Sports</span>
+                    <FaReplyAll className='w-6 h-6  text-slate-200' />
+                    <span className='mx-4 font-medium  text-slate-300'>My All Sports</span>
                 </Link>
             </li>
             <li>
@@ -19,8 +19,8 @@ const IsInstructors = () => {
                     to='/dashboard/addSports'
                     className='dash_btn'
                 >
-                    <MdSportsVolleyball className='w-6 h-6' />
-                    <span className='mx-4 font-medium'> Add Sports</span>
+                    <MdSportsVolleyball className='w-6 h-6  text-slate-200' />
+                    <span className='mx-4 font-medium text-slate-300'> Add Sports</span>
                 </Link>
 
             </li>

@@ -27,7 +27,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-7 w-80 bg-green-500">
+                    <ul className="menu p-7 w-80 h-screen bg-green-500">
                         {/* Sidebar content here */}
                         <SideBerTop />
                         {
@@ -38,16 +38,6 @@ const Dashboard = () => {
                                     }
                                 </>
                         }
-
-                        {/* {
-                            isInstructors && <IsInstructors />
-                        } */}
-                        {/* {
-                            user?.role === 'Instructors ' ? 'IsInstructors ' : <IsUser />
-                        } */}
-                        {/* {
-                            isAdmin ? <IsInstructors /> : <IsUser />
-                        } */}
                         <DashboardSideFooter />
                     </ul>
 

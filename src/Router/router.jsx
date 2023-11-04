@@ -22,6 +22,7 @@ import Update from "../pages/Dashboard/Instructors/Update";
 import PaymentHistory from "../pages/Dashboard/Admin/PaymentHistory";
 import AdminRouter from "./AdminRouter";
 import Post from "../pages/CommentInfo/Post";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
     element: <PrivateRouter><Dashboard /></PrivateRouter>,
     children: [
       // users rout
+      {
+        path: '/dashboard/',
+        element: <AdminHome />
+      },
       {
         path: '/dashboard/mySelected',
         element: <MySelected />

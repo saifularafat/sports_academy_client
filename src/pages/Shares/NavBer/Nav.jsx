@@ -6,6 +6,7 @@ import DarkLight from "./DarkLight";
 
 const Nav = () => {
     const { user, logOut } = useAuth();
+    console.log(user);
     const handlerLogOut = () => {
         logOut()
             .then(() => {
@@ -50,6 +51,9 @@ const Nav = () => {
                     </NavLink>
                 </li>
                 <li className="">
+                    {/* {
+                        user
+                    } */}
                     <NavLink to='/dashboard'
                         className={({ isActive }) => (isActive ? 'active' : 'default')}
                     >
@@ -58,7 +62,7 @@ const Nav = () => {
                 </li>
                 {/* dark  and light mode*/}
                 <div className="">
-                    <DarkLight />
+                    <DarkLight textW="w-8" textH="h-8" onColor="text-white/50" offColor=" text-slate-200" />
                 </div>
                 {
                     user ?

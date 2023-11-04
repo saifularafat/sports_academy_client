@@ -48,12 +48,12 @@
 
 /* Dashboard style */
 .dash_btn {
-  @apply flex w-full text-lg items-center px-5 py-2 mt-1 text-main_color hover:bg-gray-400 
-    transition-colors duration-300 transform rounded-md;
+  @apply flex w-full text-lg items-center px-5 py-2 mt-1 hover:bg-blue-800 duration-200 transition-all 
+    rounded-xl;
 }
 .dark_btn {
-  @apply flex w-full text-lg items-center px-5 py-1 text-main_color hover:bg-slate-400 
-    transition duration-300 transform;
+  @apply flex w-full text-lg items-center px-5 py-1 hover:bg-blue-800 
+    transition duration-200 rounded-xl transform;
 }
 
 /* terms And Condition */

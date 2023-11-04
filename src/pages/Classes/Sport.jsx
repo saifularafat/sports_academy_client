@@ -72,7 +72,7 @@ const Sport = ({ approvedSports }) => {
       className="card w-full h-fit glass md:mx-auto border-main_color rounded-2xl"
     >
       <div className="">
-        <img className="h-[200px] w-full" src={approvedSports?.image} alt="sport image" />
+        <img className="h-[200px] w-full rounded-tl-lg rounded-tr-lg" src={approvedSports?.image} alt="sport image" />
       </div>
       <div className="card-body shadow-2xl">
         <div className="flex justify-evenly">

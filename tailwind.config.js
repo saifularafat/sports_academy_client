@@ -21,7 +21,7 @@ export default {
         'trainerBanner': "url('./src/assets/slider/trainer-banner.jpg')",
       }
     },
-    darkMode: 'class',
+    // darkMode: 'class',
   },
   plugins: [require("daisyui")],
   daisyui: {
