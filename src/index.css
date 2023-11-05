@@ -48,7 +48,7 @@
 
 /* Dashboard style */
 .dash_btn {
-  @apply flex w-full text-lg items-center px-5 py-2 mt-1 hover:bg-blue-800 duration-200 transition-all 
+  @apply flex w-full text-lg items-center px-5 py-2 mt-1 hover:bg-blue-800 duration-200
     rounded-xl;
 }
 .dark_btn {

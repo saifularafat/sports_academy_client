@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../../component/Button";
 
 const TrainerInstructor = ({ trainer }) => {
   console.log(trainer);
@@ -7,7 +7,7 @@ const TrainerInstructor = ({ trainer }) => {
       <div
         data-aos="zoom-in-down"
         data-aos-duration="1500"
-        className="card md:w-96 mx-3 h-fit bg-base-100 shadow-xl"
+        className="card md:w-96 mx-3 h-fit bg-base-100 shadow-sm hover:shadow-2xl"
       >
         <>
           <img src={trainer?.image} alt="robot" className="md:h-96 rounded-lg" />
@@ -17,11 +17,7 @@ const TrainerInstructor = ({ trainer }) => {
           <h2 className="card-title text-sm">Email: {trainer?.email}</h2>
           <h2>Coach: Head coach</h2>
           <div className="md:text-right text-center">
-            {/* <Link to={`/details/${trainer?._id}`}> */}
-            <Link to='/classes'>
-            {/* <Link> */}
-              <button className="trainer_btn">See Classes</button>
-            </Link>
+            <Button adders='/classes/' label='See Classes' />
           </div>
         </div>
       </div>

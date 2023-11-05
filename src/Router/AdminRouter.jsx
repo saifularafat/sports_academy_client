@@ -16,7 +16,7 @@ const AdminRouter = ({ children }) => {
         return children;
     }
     return <Navigate
-        to='/'
+        to='/login'
         state={{ from: location }}
         replace>
     </Navigate>
