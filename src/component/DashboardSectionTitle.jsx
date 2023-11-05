@@ -1,5 +1,5 @@
 
-const DashSectionTitle = ({ name, title, subTitle }) => {
+const DashSectionTitle = ({ name, title, subTitle, borderW }) => {
     return (
         <>
             <div className="py-0">
@@ -15,7 +15,7 @@ const DashSectionTitle = ({ name, title, subTitle }) => {
                     data-aos="flip-up"
                     data-aos-duration="1500"
                     className="flex flex-col items-center">
-                    <div className="text-center w-1/3 mx-auto border-b-2 border-color-btn rounded-2xl pb-4">
+                    <div className={`${borderW} text-center mx-auto border-b-2 border-color-btn rounded-2xl pb-4`}>
                         <h3 className="text-3xl font-medium pb-1 uppercase">{title}</h3>
                         <p className="text-base font-normal md:mx-auto">{subTitle}</p>
                     </div>

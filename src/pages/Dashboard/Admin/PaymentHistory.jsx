@@ -13,6 +13,7 @@ const PaymentHistory = () => {
             <DashSectionTitle
                 name='Payment'
                 title='Payment History'
+                borderW="w-5/12"
                 subTitle='All users added Sport and users Enrol the Sports Class!'
             />
             <div

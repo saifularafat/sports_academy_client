@@ -1,6 +1,6 @@
 import Container from "./Container";
 
-const SectionTitle = ({ name, title, subTitle }) => {
+const SectionTitle = ({ name, title, subTitle, borderW }) => {
     return (
         <Container>
             <div className="py-16">
@@ -16,9 +16,9 @@ const SectionTitle = ({ name, title, subTitle }) => {
                     data-aos="flip-up"
                     data-aos-duration="1500"
                     className="flex flex-col items-center">
-                    <div className="text-center border-b-2 border-color-btn pb-4">
+                    <div className={`${borderW} text-center border-b-2 border-color-btn pb-4 rounded-lg`}>
                         <h3 className="text-3xl font-medium pb-1 uppercase">{title}</h3>
-                        <p className="text-base font-normal md:w-[620px] md:mx-auto">{subTitle}</p>
+                        <p className="text-base font-normal md:mx-auto">{subTitle}</p>
                     </div>
                 </div>
             </div>

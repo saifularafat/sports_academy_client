@@ -87,6 +87,7 @@ const ManageAllUser = () => {
             <DashSectionTitle
                 name='Admin'
                 title='Manage All Users'
+                borderW="w-2/5"
                 subTitle='Site all Users and Position!'
             />
             <div
