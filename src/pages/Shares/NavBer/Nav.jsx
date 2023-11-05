@@ -3,10 +3,25 @@ import Profile from "./Profile";
 import useAuth from "../../../component/useAuth";
 import Swal from "sweetalert2";
 import DarkLight from "./DarkLight";
+import useAdmin from "../../../api/useAdmin";
+import useInstructor from "../../../api/useInstructor";
 
 const Nav = () => {
     const { user, logOut } = useAuth();
-    console.log(user);
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
+    // const admin = users.filter(
+    //     (admin) => admin.role === "admin"
+    // );
+    // const instructor = users.filter(
+    //     (trainers) => trainers.role === "instructor"
+    // );
+    // const student = users.filter(
+    //     (student) => student.role === "student"
+    // );
+    // console.log(instructor, 'This ', admin, "Aaaaaaa", student)
+
     const handlerLogOut = () => {
         logOut()
             .then(() => {
@@ -50,16 +65,34 @@ const Nav = () => {
                         Blog
                     </NavLink>
                 </li>
-                <li className="">
-                    {/* {
-                        user
-                    } */}
-                    <NavLink to='/dashboard'
-                        className={({ isActive }) => (isActive ? 'active' : 'default')}
-                    >
-                        Dashboard
-                    </NavLink>
-                </li>
+                {
+                    user && (
+                        <li className="">
+                            {
+                                isAdmin ?
+                                    <NavLink to='/dashboard/adminHome'
+                                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                    :
+                                    isInstructor ?
+                                        <NavLink to='/dashboard/instructorHome'
+                                            className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                        >
+                                            Dashboard
+                                        </NavLink>
+                                        : <NavLink to='/dashboard/studentHome'
+                                            className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                        >
+                                            Dashboard
+                                        </NavLink>
+                            }
+
+                        </li>
+                    )
+                }
+
                 {/* dark  and light mode*/}
                 <div className="">
                     <DarkLight textW="w-8" textH="h-8" onColor="text-white/50" offColor=" text-slate-200" />

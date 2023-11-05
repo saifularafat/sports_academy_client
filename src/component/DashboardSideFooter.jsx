@@ -23,7 +23,7 @@ const DashboardSideFooter = () => {
         <div className="border-t-2 border-main_color/60 shadow-sm rounded-xl pt-5">
             <button className="dark_btn">
                 <DarkLight textW="w-6" textH="h-6" onColor="text-slate-300" offColor="text-slate-400" />
-                <span className="text-lg font-medium md:ml-0 -ml-[90px] text-slate-400">DarkMode</span>
+                <span className="text-lg font-medium md:ml-0 -ml-[90px] text-slate-400 cursor-default">DarkMode</span>
             </button>
             <button className="dark_btn">
                 <FcSettings className='w-5 h-5 text-slate-300' />

@@ -6,17 +6,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Sport = ({ approvedSports }) => {
-  // console.log(approvedSports);
   const { user } = useAuth();
   const [parson, setParson] = useState();
-  console.log(parson);
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/users/${user?.email}`)
       .then(data => {
         setParson(data.data);
       })
   }, [user])
-  console.log(user);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,10 +31,8 @@ const Sport = ({ approvedSports }) => {
         email: user?.email,
         userName: user?.displayName,
       };
-      console.log(BookItem);
       axios.post(`${import.meta.env.VITE_API_URL}/bookMarks`, BookItem)
         .then(res => {
-          console.log(res);
           if (res.data.insertedId) {
             Swal.fire({
               position: 'top-center',

@@ -23,7 +23,13 @@ import PaymentHistory from "../pages/Dashboard/Admin/PaymentHistory";
 import AdminRouter from "./AdminRouter";
 import Post from "../pages/CommentInfo/Post";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
+import InstructorHome from "../pages/Dashboard/Instructors/InstructorHome";
+import UserDashboard from "../pages/Dashboard/AllUsers/User/UserDashboard";
+import InstructorRouter from "./InstructorRouter";
+// import { allUsers } from "../api/useUsers";
 
+// const [users] = allUsers();
+// console.log(users);
 const router = createBrowserRouter([
   {
     path: "/",
@@ -71,16 +77,51 @@ const router = createBrowserRouter([
     path: 'terms',
     element: <Terms />
   },
-  // dashboard router
+
+   ///// DASHBOARD ROUT /////
   {
     path: '/dashboard',
-    // element: <Dashboard />,
     element: <PrivateRouter><Dashboard /></PrivateRouter>,
     children: [
-      // users rout
+      // Admin rout
       {
-        path: '/dashboard/',
-        element: <AdminHome />
+        path: '/dashboard/adminHome',
+        element: <AdminRouter><AdminHome /></AdminRouter> 
+      },
+      {
+        path: '/dashboard/manageAllUsers',
+        element: <AdminRouter><ManageAllUser /></AdminRouter>
+      },
+      {
+        path: '/dashboard/manageClasses',
+        element: <AdminRouter><ManageClasses /></AdminRouter>
+      },
+      {
+        path: '/dashboard/paymentHistory',
+        element: <AdminRouter><PaymentHistory /></AdminRouter>
+      },
+      // Instructors rout
+      {
+        path: '/dashboard/instructorHome',
+        element: <InstructorRouter><InstructorHome /></InstructorRouter>  
+      },
+      {
+        path: '/dashboard/addSports',
+        element: <InstructorRouter><AddSports /></InstructorRouter>
+      },
+      {
+        path: '/dashboard/instructorsAllClass',
+        element: <InstructorRouter><InstructorsAllClass /></InstructorRouter>
+      },
+      {
+        path: '/dashboard/update/:id',
+        element: <InstructorRouter><Update /></InstructorRouter>,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/classes/${params.id}`)
+      },
+      // user route
+      {
+        path: '/dashboard/studentHome',
+        element: <UserDashboard /> 
       },
       {
         path: '/dashboard/mySelected',
@@ -93,33 +134,6 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/payment/:id',
         element: <PrivateRouter><Payment /></PrivateRouter>
-      },
-      // Instructors rout
-      {
-        path: '/dashboard/addSports',
-        element: <AddSports />
-      },
-      {
-        path: '/dashboard/instructorsAllClass',
-        element: <InstructorsAllClass />
-      },
-      {
-        path: '/dashboard/update/:id',
-        element: <Update />,
-        loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/classes/${params.id}`)
-      },
-      // Admin route
-      {
-        path: '/dashboard/manageAllUsers',
-        element: <AdminRouter><ManageAllUser /></AdminRouter>
-      },
-      {
-        path: '/dashboard/manageClasses',
-        element: <AdminRouter><ManageClasses /></AdminRouter>
-      },
-      {
-        path: '/dashboard/paymentHistory',
-        element: <AdminRouter><PaymentHistory /></AdminRouter>
       },
     ]
   },

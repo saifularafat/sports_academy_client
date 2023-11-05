@@ -5,7 +5,6 @@ import Coach from "./Coach";
 
 const PopularCoach = () => {
     const [users] = allUsers();
-    console.log(users);
     const classTrainer = users.filter(
         (trainers) => trainers.role === "instructor"
     );

@@ -8,11 +8,11 @@ const IsAdmin = () => {
         <ul className="md:mt-3 mt-4 pb-2 shadow-md rounded-lg">
             <li>
                 <Link
-                    to='/dashboard'
+                    to='/dashboard/adminHome'
                     className='dash_btn'
                 >
                     <AiFillHome className='w-5 h-5 text-slate-200' />
-                    <span className='mx-4 font-medium text-slate-300'>Manage Classes</span>
+                    <span className='mx-4 font-medium text-slate-300'>Admin Home</span>
                 </Link>
             </li>
             <li>

@@ -8,7 +8,7 @@ const IsUser = () => {
         <ul className="md:mt-7 mt-4 md:pb-10">
             <li>
                 <Link
-                    to='/dashboard/'
+                    to='/dashboard/studentHome'
                     className='dash_btn'
                 >
                     <AiFillHome className='w-5 h-5  text-slate-200' />

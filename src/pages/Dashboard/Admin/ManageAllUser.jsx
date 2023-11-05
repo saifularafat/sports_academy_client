@@ -49,7 +49,7 @@ const ManageAllUser = () => {
     const handlerMakeInstructor = user => {
         Swal.fire({
             title: 'Are you sure?',
-            text: "Your web site New Admin selected",
+            text: "Your web site New Instructor selected",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#173931',
@@ -58,7 +58,8 @@ const ManageAllUser = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`${import.meta.env.VITE_API_URL}/users/instructor/${user._id}`, {
-                    method: 'PATCH'
+                    method: 'PATCH',
+                    headers: { authorization: `bearer ${localStorage.getItem('token_access')}` }
                 })
                     .then(res => res.json())
                     .then(data => {
