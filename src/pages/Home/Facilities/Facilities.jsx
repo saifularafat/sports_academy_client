@@ -10,7 +10,7 @@ import coach from "../../../assets/Facilities/coach.jpeg";
 import field from "../../../assets/Facilities/field.jpg";
 const Facilities = () => {
   return (
-    <div className="py-16">
+    <div className="pt-1 pb-10">
       <Container>
         <SectionTitle
           name="Facilities"

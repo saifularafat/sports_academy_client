@@ -2,10 +2,11 @@ import Button from "../../../component/Button";
 
 const Coach = ({ person }) => {
     return (
-        <div className=" hover:shadow-xl rounded-lg transition duration-200">
+        <div 
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        className="hover:shadow-2xl shadow-md rounded-lg transition duration-200">
             <div
-                data-aos="fade-up"
-                data-aos-duration="3000"
                 className="relative md:w-[350px] mx-auto">
                 <img src={person?.image} alt="Coach-image" className="w-full md:h-80 h-64 rounded-lg grayscale transition duration-500" />
                 <div className="absolute top-0 left-0 w-full md:h-80 h-64 opacity-0 hover:opacity-100 transition duration-500 ">

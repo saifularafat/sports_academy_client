@@ -78,7 +78,7 @@ const Footer = () => {
                     </div>
                 </footer>
                 <hr  className="bg-black text-black"/>
-            <p className="text-center text-main_color pt-2 text-base">@copyright by <a href="#" className="hover:animate-pulse hover:text-color-btn hover:font-semibold">saiful arafat</a> - <span className="text-xs">2023</span></p>
+            <p className="text-center text-white pt-2 text-base animate-pulse hover:animate-none">@copyright by <a href="#" className=" hover:text-color-btn text-white hover:font-semibold">saiful arafat</a> - <span className="text-xs">2023</span></p>
             </div>
         </>
     )
