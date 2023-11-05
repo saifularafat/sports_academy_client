@@ -14,7 +14,7 @@ const InstructorRouter = ({ children }) => {
         return children;
     }
     return <Navigate
-        to='/login'
+        to='/'
         state={{ from: location }}
         replace>
     </Navigate>

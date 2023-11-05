@@ -11,17 +11,6 @@ const Nav = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
-    // const admin = users.filter(
-    //     (admin) => admin.role === "admin"
-    // );
-    // const instructor = users.filter(
-    //     (trainers) => trainers.role === "instructor"
-    // );
-    // const student = users.filter(
-    //     (student) => student.role === "student"
-    // );
-    // console.log(instructor, 'This ', admin, "Aaaaaaa", student)
-
     const handlerLogOut = () => {
         logOut()
             .then(() => {

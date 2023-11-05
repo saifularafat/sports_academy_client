@@ -1,16 +1,26 @@
-import { FaReplyAll } from "react-icons/fa";
+import { AiFillHome } from "react-icons/ai";
+import { GiTransportationRings } from "react-icons/gi";
 import { MdSportsVolleyball } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const IsInstructors = () => {
     return (
-        <ul className="md:mt-12 mt-6 md:pb-16">
+        <ul className="md:mt-6 mt-6 md:pb-6">
+            <li>
+                <Link
+                    to='/dashboard/instructorHome'
+                    className='dash_btn'
+                >
+                    <AiFillHome className='w-6 h-6  text-slate-200' />
+                    <span className='mx-4 font-medium  text-slate-300'>Home</span>
+                </Link>
+            </li>
             <li>
                 <Link
                     to='/dashboard/instructorsAllClass'
                     className='dash_btn'
                 >
-                    <FaReplyAll className='w-6 h-6  text-slate-200' />
+                    <GiTransportationRings className='w-6 h-6  text-slate-200' />
                     <span className='mx-4 font-medium  text-slate-300'>My All Sports</span>
                 </Link>
             </li>

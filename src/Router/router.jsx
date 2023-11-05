@@ -26,10 +26,7 @@ import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 import InstructorHome from "../pages/Dashboard/Instructors/InstructorHome";
 import UserDashboard from "../pages/Dashboard/AllUsers/User/UserDashboard";
 import InstructorRouter from "./InstructorRouter";
-// import { allUsers } from "../api/useUsers";
 
-// const [users] = allUsers();
-// console.log(users);
 const router = createBrowserRouter([
   {
     path: "/",
