@@ -5,7 +5,6 @@ import Sports from "./Sports";
 
 const PopularSports = () => {
     const [classes] = popularSixClasses()
-    // console.log(classes);
     return (
         <div>
             <SectionTitle

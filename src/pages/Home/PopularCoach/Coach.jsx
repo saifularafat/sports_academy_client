@@ -17,7 +17,10 @@ const Coach = ({ person }) => {
                     <p className="pb-2 text-lg">Email: {person?.email}</p>
                     <Button
                         label='All Sports'
-                        adders='/classes'>
+                        adders='/classes'
+                        btnBorderColor="border-accent" 
+                        btnTextColor="text-accent"
+                        >
                     </Button>
                 </div>
             </div>
