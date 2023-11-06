@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import TopCategory from "./TopCategory";
+import EnrollEarning from "./EnrollEarning";
 
 const AdminHome = () => {
     return (
@@ -14,6 +15,9 @@ const AdminHome = () => {
             </div>
             <div className="py-4">
                 <TopCategory />
+            </div>
+            <div className="py-5">
+                <EnrollEarning />
             </div>
         </div>
     );
