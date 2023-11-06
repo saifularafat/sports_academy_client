@@ -72,6 +72,14 @@
      hover:text-white transition duration-300 hover:shadow-inner hover:shadow-green-400;
 }
 
+/* Dashboard */
+.th__style {
+  @apply normal-case py-4 md:px-10 px-6 text-xl font-medium;
+}
+.dth__style {
+  @apply normal-case py-4 px-11 text-xl font-semibold;
+}
+
 /* Comments */
 /* .input_filed {
   @apply h-16 text-slate-600 flex items-center justify-between p-3 m-3 rounded-l-md focus:outline-none border border-slate-200 cursor-pointer mb-2 bg-zinc-200;

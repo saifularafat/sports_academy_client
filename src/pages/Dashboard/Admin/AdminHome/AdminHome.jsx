@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import TopCategory from "./TopCategory";
 import EnrollEarning from "./EnrollEarning";
+import Table from "./Table";
 
 const AdminHome = () => {
     return (
@@ -18,6 +19,9 @@ const AdminHome = () => {
             </div>
             <div className="py-5">
                 <EnrollEarning />
+            </div>
+            <div className="rounded-lg shadow-lg overflow-x-scroll">
+                <Table />
             </div>
         </div>
     );
