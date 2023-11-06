@@ -22,7 +22,7 @@ import Update from "../pages/Dashboard/Instructors/Update";
 import PaymentHistory from "../pages/Dashboard/Admin/PaymentHistory";
 import AdminRouter from "./AdminRouter";
 import Post from "../pages/CommentInfo/Post";
-import AdminHome from "../pages/Dashboard/Admin/AdminHome";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 import InstructorHome from "../pages/Dashboard/Instructors/InstructorHome";
 import UserDashboard from "../pages/Dashboard/AllUsers/User/UserDashboard";
 import InstructorRouter from "./InstructorRouter";

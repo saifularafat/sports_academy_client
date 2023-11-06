@@ -5,7 +5,7 @@ const Sports = ({ popular }) => {
         <div
             data-aos="fade-up"
             data-aos-duration="3000"
-            className="card w-96 bg-base-100  hover:shadow-2xl shadow-md">
+            className="card md:w-96 bg-base-100  hover:shadow-2xl shadow-md">
             <figure>
                 <img src={popular?.classImage} alt="Sport" className="w-full h-64" />
             </figure>

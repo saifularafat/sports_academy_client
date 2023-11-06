@@ -8,7 +8,7 @@ const About = () => {
         <div className="md:mb-20 mb-4 mt-10">
             <SectionTitle
                 name='About'
-                borderW='w-2/4'
+                borderW='md:w-2/4 w-full'
                 title='Academy Immersion'
                 subTitle='World class academy coaches and player development team of traditional media'
             />

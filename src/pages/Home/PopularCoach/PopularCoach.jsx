@@ -13,7 +13,7 @@ const PopularCoach = () => {
             <SectionTitle
                 name='Trainers'
                 title='Popular Trainers'
-                borderW="w-2/3"
+                borderW="md:w-2/3 full"
                 subTitle='Ultimately, our goal is to provide a comprehensive and unparalleled sports content experience that transcends the boundaries of traditional sports content experience that transcends the boundaries of traditional media'
             />
             <Container>

@@ -10,7 +10,7 @@ const PopularSports = () => {
             <SectionTitle
                 name='Sports'
                 title='Popular Sports Category'
-                borderW="w-2/3"
+                borderW="md:w-2/3 w-full"
                 subTitle='Ultimately, our goal is to provide a comprehensive and unparalleled sports content experience that transcends the boundaries of traditional mediaUltimately, our goal is to comprehensive and unparalleled sports content experience that transcends the boundaries of traditional media' />
             <Container>
                 <div className="grid md:grid-cols-3 grid-cols-1 gap-6">

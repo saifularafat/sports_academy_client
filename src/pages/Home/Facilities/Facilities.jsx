@@ -15,7 +15,7 @@ const Facilities = () => {
         <SectionTitle
           name="Facilities"
           title="Academy Facilities"
-          borderW="w-2/3"
+          borderW="md:w-2/3 w-full"
           subTitle="our goal is to provide a comprehensive and unparalleled sports content experience that transcends the boundaries of traditional sports content experience that transcends."
         />
         <div

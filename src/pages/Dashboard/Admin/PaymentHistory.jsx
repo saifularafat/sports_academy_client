@@ -4,7 +4,6 @@ import DashSectionTitle from "../../../component/DashboardSectionTitle";
 
 const PaymentHistory = () => {
     const [payments] = useAllPayment();
-    console.log(payments);
     return (
         <div>
             <Helmet>
