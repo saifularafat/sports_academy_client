@@ -209,4 +209,58 @@ const earningPieChart = {
 
 }
 
-export { sportStudentLineChart, bookingBarChart, earningPieChart }
+const activatesBarChart = {
+    series: [{
+        data: [20, 16, 11, 24, 15, 19, 13, 29, 9, 13, 25, 12  ]
+    }],
+    options: {
+        chart: {
+            height: 350,
+            type: 'bar',
+            events: {
+                click: function (chart, w, e) {
+                }
+            }
+        },
+        colors: ['#f39c12', '#1E40AF', "#00075F", "#122033"],
+        plotOptions: {
+            bar: {
+                columnWidth: '45%',
+                distributed: true,
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        legend: {
+            show: false
+        },
+        xaxis: {
+            categories: [
+                ['January'],
+                ['February'],
+                ['March'],
+                ['April'],
+                ['May'],
+                ['Jun'],
+                ['July'],
+                ['August'],
+                ['September'],
+                ['October'],
+                ['November'],
+                ['December'],
+            ],
+            labels: {
+                style: {
+                    colors: ['#f39c12', '#dfe6e9'],
+                    fontSize: '12px'
+                }
+            }
+        }
+    },
+
+
+};
+
+
+export { sportStudentLineChart, bookingBarChart, earningPieChart, activatesBarChart }
