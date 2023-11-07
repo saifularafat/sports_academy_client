@@ -2,12 +2,16 @@ import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import { activatesBarChart } from "../../../../component/AllChart"
 import DashboardFooter from "../../DashboardFooter";
+import Marquee from "react-fast-marquee";
 
 const UserDashboard = () => {
     const [bar] = useState(activatesBarChart)
     return (
         <div>
-            <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+            <Marquee pauseOnHover style={{backgroundColor:'black', color:"white",border:'2px', padding:"5px"}} >
+            This winter enroll start now cricket, football, basketball, hockey, running, badminton, all these admissions are going on. Enroll your favorite sports, otherwise you won't get time to enroll.&nbsp; &nbsp; 
+            </Marquee>
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-5 pt-5">
                 <div className="shadow-2xl rounded-md text-center p-4">
                     <h3 className="text-lg md:text-2xl font-semibold">Total Enroll</h3>
                     <p className="text-base md:text-lg font-bold">00</p>
@@ -25,7 +29,7 @@ const UserDashboard = () => {
                 <h3 className="text-left text-2xl font-semibold">Your Activates</h3>
                 <ReactApexChart options={bar.options} series={bar.series} type="bar" height={300} width={"100%"} />
             </div>
-            <div className="pt-9">
+            <div className="pt-8">
                 <DashboardFooter />
             </div>
         </div>
