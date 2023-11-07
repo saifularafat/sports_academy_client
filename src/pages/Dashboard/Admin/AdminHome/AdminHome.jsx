@@ -20,8 +20,10 @@ const AdminHome = () => {
             <div className="py-5">
                 <EnrollEarning />
             </div>
-            <div className="rounded-lg shadow-lg overflow-x-scroll">
-                <Table />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                <div className={`md:col-span-2 rounded-lg shadow-lg overflow-x-scroll md:overflow-x-hidden`}>
+                    <Table />
+                </div>
             </div>
         </div>
     );

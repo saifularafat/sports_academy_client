@@ -61,7 +61,7 @@ const ManageClasses = () => {
       <DashSectionTitle
         name="Classes"
         title="Manage Classes"
-        borderW=" w-3/12"
+        borderW="md:w-4/12 w-full"
         subTitle="All Instructors added by all Classes!"
       />
       <h2 className="text-3xl font-medium p-4">Total Classes : {Classes.length}</h2>
