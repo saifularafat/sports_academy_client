@@ -80,6 +80,12 @@
   @apply normal-case py-4 px-11 text-xl font-semibold;
 }
 
+.apexcharts-toolbar {
+  top: 0px;
+  right: 3px;
+  display: none !important;
+}
+
 /* Comments */
 /* .input_filed {
   @apply h-16 text-slate-600 flex items-center justify-between p-3 m-3 rounded-l-md focus:outline-none border border-slate-200 cursor-pointer mb-2 bg-zinc-200;

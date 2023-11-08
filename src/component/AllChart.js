@@ -211,7 +211,7 @@ const earningPieChart = {
 
 const activatesBarChart = {
     series: [{
-        data: [20, 16, 11, 24, 15, 19, 13, 29, 9, 13, 25, 12  ]
+        data: [20, 16, 11, 24, 15, 19, 13, 29, 9, 13, 25, 12]
     }],
     options: {
         chart: {
@@ -262,5 +262,83 @@ const activatesBarChart = {
 
 };
 
+const classActivateChart = {
 
-export { sportStudentLineChart, bookingBarChart, earningPieChart, activatesBarChart }
+    series: [{
+        name: 'Activities',
+        data: [14, 15, 14, 17, 15, 16, 17]
+    }],
+    options: {
+        annotations: {
+            points: [{
+                x: 'Activities',
+                seriesIndex: 0,
+                label: {
+                    borderColor: '#775DD0',
+                    offsetY: 0,
+                    style: {
+                        color: '#fff',
+                        background: '#775DD0',
+                    },
+                    text: 'Student Activates Chart',
+                }
+            }]
+        },
+        chart: {
+            height: 350,
+            type: 'bar',
+        },
+        plotOptions: {
+            bar: {
+                borderRadius: 10,
+                columnWidth: '50%',
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        legend: {
+            show: false
+        },
+        stroke: {
+            width: 2
+        },
+
+        grid: {
+            row: {
+                colors: ['#fff', '#f2f2f2']
+            }
+        },
+        xaxis: {
+            labels: {
+                rotate: -45
+            },
+            categories: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                'Friday', 
+            ],
+            tickPlacement: 'on'
+        },
+        yaxis: {
+            title: {
+                text: 'Attendant',
+                fontSize: '16px'
+            },
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'light',
+                type: "horizontal",
+                shadeIntensity: 0.25,
+                gradientToColors: undefined,
+                inverseColors: true,
+                opacityFrom: 0.85,
+                opacityTo: 0.85,
+                stops: [50, 0, 100]
+            },
+        }
+    },
+};
+
+
+export { sportStudentLineChart, bookingBarChart, earningPieChart, activatesBarChart, classActivateChart }
