@@ -232,12 +232,12 @@ const SignUp = () => {
                             </div>
                             <div>
                                 <div className='flex justify-between'>
-                                    <label htmlFor='password' className='form_label'>
+                                    <label htmlFor='phone' className='form_label'>
                                         Phone
                                     </label>
                                 </div>
                                 <input
-                                    type='text'
+                                    type='number'
                                     name='phone'
                                     id='phone'
                                     placeholder='+000 00 0000 000 0 '
