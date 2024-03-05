@@ -7,8 +7,7 @@ import CheckOutFrom from "./CheckoutForm ";
 import { Helmet } from "react-helmet-async";
 import DashSectionTitle from "../../../../component/DashboardSectionTitle";
 
-const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_KEY);
-
+pay
 const Payment = () => {
     const { id } = useParams();
     const [payment, setPayment] = useState({});

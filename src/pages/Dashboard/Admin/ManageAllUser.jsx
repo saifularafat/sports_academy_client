@@ -111,7 +111,7 @@ const ManageAllUser = () => {
                         users.map((user) =>
                             <tbody key={user._id}>
                                 <tr className="">
-                                    <td>
+                                    <td>0
                                         <div className="mask mask-squircle w-12 h-12">
                                             <img src={user?.image} alt="Avatar Tailwind CSS Component" />
                                         </div>
